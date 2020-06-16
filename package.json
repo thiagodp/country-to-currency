@@ -40,14 +40,15 @@
     "dist/*"
   ],
   "source": "index.ts",
-  "main": "index.js",
-  "module": "index.esm.js",
-  "unpkg": "index.umd.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "browser": "dist/index.umd.js",
+  "unpkg": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "gen": "node generate.js",
     "prebuild": "rimraf dist",
-    "build": "microbundle --output dist/index.js",
+    "build": "microbundle",
     "test": "echo \"No tests\"",
     "preversion": "npm run gen && npm run build",
     "postversion": "git push && git push --tags"
