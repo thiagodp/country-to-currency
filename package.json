@@ -1,0 +1,54 @@
+{
+  "name": "country-to-currency",
+  "version": "1.0.0",
+  "description": "Map country codes (ISO 3166-1 alpha-2) to their default currency codes (ISO 4217)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thiagodp/country-to-currency.git"
+  },
+  "homepage": "https://github.com/thiagodp/country-to-currency",
+  "bugs": {
+    "url": "https://github.com/thiagodp/country-to-currency/issues"
+  },
+  "author": {
+    "name": "Thiago Delgado Pinto",
+    "email": "thiago-dp@bol.com.br"
+  },
+  "keywords": [
+    "country",
+    "currency",
+    "code",
+    "iso-3166",
+    "iso-4217",
+    "locale",
+    "i18n",
+    "javascript",
+    "typescript",
+    "browser",
+    "nodejs",
+    "denojs"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "country-list": "latest",
+    "currency-codes": "latest",
+    "microbundle": "^0.12.1",
+    "rimraf": "^3.0.2"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "source": "index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.umd.js",
+  "scripts": {
+    "gen": "node generate.js",
+    "prebuild": "rimraf dist",
+    "build": "microbundle",
+    "test": "echo \"No tests\"",
+    "preversion": "npm run gen && npm run build",
+    "postversion": "git push && git push --tags"
+  }
+}
