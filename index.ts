@@ -116,7 +116,7 @@ export default {
   KM: 'KMF',
   KN: 'XCD',
   KP: 'KPW',
-  KR: 'KPW',
+  KR: 'KRW',
   KW: 'KWD',
   KY: 'KYD',
   KZ: 'KZT',

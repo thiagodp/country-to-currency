@@ -2,14 +2,14 @@
 
 > Maps country codes ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)) to their default currency codes ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)).
 
-⚡ Just 3 KB and no external dependencies.
+⚡ Just 2,3 KB and no external dependencies.
 
-🎯 Works with browsers, NodeJS and DenoJS (JavaScript and TypeScript).
+🎯 Works with browsers, NodeJS and DenoJS. JavaScript and TypeScript.
 
 ## Install
 
 ```shell
-npm install country-to-currency
+npm i country-to-currency
 ```
 
 ## Usage
@@ -21,29 +21,36 @@ This library exports a default object that maps country codes to currency codes.
 
 ### Browser - without installing anything
 
+Global:
 ```html
-<script type="module" >
-    import currency from "https://unpkg.com/country-to-currency/index.esm.js";
-    console.log( currency ); // {AF: "AFN", AX: "EUR", ... }
-    console.log( currency[ 'US' ] ); // USD
-    console.log( currency[ 'DE' ] ); // EUR
-    console.log( currency[ 'BR' ] ); // BRL
+<script crossorigin src="https://unpkg.com/country-to-currency" ></script>
+<script>
+  console.log( countryToCurrency ); // {AF: "AFN", AX: "EUR", ... }
+  console.log( countryToCurrency[ 'US' ] ); // USD
+  console.log( countryToCurrency[ 'DE' ] ); // EUR
+  console.log( countryToCurrency[ 'BR' ] ); // BRL
 </script>
 ```
 
-_Note_: [UMD](https://github.com/umdjs/umd) is available in `index.umd.js`.
+ESM:
+```html
+<script type="module" >
+  import countryToCurrency from "https://unpkg.com/country-to-currency/index.esm.js";
+  console.log( countryToCurrency[ 'US' ] ); // USD
+</script>
+```
 
 ### NodeJS
 ```js
-const currency = require( 'country-to-currency' );
-console.log( currency ); // {AF: "AFN", AX: "EUR", ... }
+const countryToCurrency = require( 'country-to-currency' );
+console.log( countryToCurrency[ 'US' ] ); // USD
 ```
 
 ### DenoJS
 
 ```js
-import currency from "https://unpkg.com/country-to-currency/index.esm.js";
-console.log( currency ); // {AF: "AFN", AX: "EUR", ... }
+import countryToCurrency from "https://unpkg.com/country-to-currency/index.esm.js";
+console.log( countryToCurrency[ 'US' ] ); // USD
 ```
 
 ## Notes

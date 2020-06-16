@@ -33,7 +33,7 @@
   "devDependencies": {
     "country-list": "latest",
     "currency-codes": "latest",
-    "microbundle": "^0.12.1"
+    "microbundle": "^0.12.4"
   },
   "files": [
     "index.*"
@@ -46,6 +46,7 @@
   "types": "index.d.ts",
   "scripts": {
     "gen": "node generate.js",
+    "prebuild": "npm run gen",
     "build": "microbundle",
     "test": "echo \"No tests\"",
     "preversion": "npm run gen && npm run build",

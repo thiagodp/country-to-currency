@@ -1,17 +1,6 @@
-var countries = require('country-list/data')
-var currencies = require('currency-codes/data')
-const fs = require('fs')
-
-// const countryNames = countries.map( c => c.name );
-// const currencyCountries = currencies.map( c => c.countries.join( ',' ) );
-// for ( const c of countryNames ) {
-//   console.log( c );
-// }
-// console.log( '_'.repeat( 40 ) );
-// for ( const c of currencyCountries ) {
-//   console.log( c );
-// }
-
+let countries = require( 'country-list/data' );
+let currencies = require( 'currency-codes/data' );
+const fs = require( 'fs' );
 
 const r = {};
 let count = 0;
@@ -20,7 +9,6 @@ for ( const country of countries ) {
   for ( const currency of currencies ) {
     const countryName = country.name.split( ',' )[ 0 ];
     if ( currency.countries.join( ',' ).indexOf( countryName ) >= 0 ) {
-      // console.log( country, '->', currency.countries.join( ',' ), '->', currency.code );
       r[ country.code ] = currency.code;
       ++count;
       break;
@@ -31,13 +19,7 @@ for ( const country of countries ) {
   }
 }
 
-// console.log( r );
-// console.log( countries.length, '<->', count );
-// console.log( 'Not found:', notFound );
-
 if ( notFound.length > 0 ) {
-
-  // console.log( '_'.repeat( 40 ) );
 
   const allNotFound = [ ... notFound ];
   for ( const curr of currencies ) {
@@ -56,7 +38,6 @@ if ( notFound.length > 0 ) {
           .toLowerCase();
 
         if ( nfName.indexOf( c ) >= 0 ) {
-          // console.log( 'found', nf );
           notFound = notFound.filter( f => f.code != nf.code );
           r[ nf.code ] = curr.code;
           ++count;
@@ -67,23 +48,30 @@ if ( notFound.length > 0 ) {
   }
 }
 
-const manualEntries = [
+//
+// Inclusions or Fixes
+//
+
+const inclusionsOrFixes = [
   // Antactica has no official currency, so we will assume 'USD'
   { countryCode: 'AQ', currencyCode: 'USD' },
   // According to Google, Palestine uses the currency 'New Israeli Sheqel', code 'ILS'
   { countryCode: 'PS', currencyCode: 'ILS' },
+  // According to ISO 4217, South Korea's (country code KR) uses currency 'KRW'. Thanks @MunjaeLee for pointing it out.
+  { countryCode: 'KR', currencyCode: 'KRW' },
 ];
 
-for ( const m of manualEntries ) {
-  if ( ! r[ m.countryCode ] ) {
-    r[ m.countryCode ] = m.currencyCode;
-    ++count;
-    notFound = notFound.filter( f => f.code != m.countryCode );
+let inclusions = 0;
+for ( const item of inclusionsOrFixes ) {
+  if ( ! r[ item.countryCode ] ) {
+    inclusions++;
   }
+  r[ item.countryCode ] = item.currencyCode;
 }
 
-console.log( countries.length, 'countries,', count, 'mapped' );
-console.log( 'Not found:', notFound );
+//
+// Generate file
+//
 
 const content = 'export default ' +
   JSON.stringify( r, null, 2 )
@@ -93,4 +81,14 @@ const content = 'export default ' +
 
 fs.writeFileSync( 'index.ts', content );
 
+
+//
+// Report
+//
+
 console.log( 'index.ts generated.' );
+console.log( countries.length, '\timported countries');
+console.log( inclusions, '\tmanually included.' );
+console.log( inclusionsOrFixes.length - inclusions, '\tmanually fixed.' );
+console.log( notFound.length, '\twere not found', notFound.length > 0 ? notFound : '' );
+
