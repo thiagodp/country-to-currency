@@ -33,21 +33,19 @@
   "devDependencies": {
     "country-list": "latest",
     "currency-codes": "latest",
-    "microbundle": "^0.12.1",
-    "rimraf": "^3.0.2"
+    "microbundle": "^0.12.1"
   },
   "files": [
-    "dist/*"
+    "index.*"
   ],
   "source": "index.ts",
-  "main": "dist/index.js",
-  "browser": "dist/index.umd.js",
-  "unpkg": "dist/index.umd.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "browser": "index.umd.js",
+  "unpkg": "index.umd.js",
+  "module": "index.esm.js",
+  "types": "index.d.ts",
   "scripts": {
     "gen": "node generate.js",
-    "prebuild": "rimraf dist",
     "build": "microbundle",
     "test": "echo \"No tests\"",
     "preversion": "npm run gen && npm run build",
