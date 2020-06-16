@@ -1,6 +1,6 @@
 # country-to-currency
 
-> Maps country codes ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)) to their default currency codes ([ISO 4217 currency codes](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)).
+> Maps country codes ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)) to their default currency codes ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)).
 
 ⚡ Just 3 KB and no external dependencies.
 
@@ -14,7 +14,10 @@ npm install country-to-currency
 
 ## Usage
 
-The library just returns a default object that maps country codes to currency codes.
+This library exports a default object that maps country codes to currency codes.
+
+[Available formats]() include [UMD](https://github.com/umdjs/umd) (therefore [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) and [CommonJS](http://wiki.commonjs.org/wiki/CommonJS)) and
+[ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
 ### Browser - without installing anything
 
@@ -28,7 +31,7 @@ The library just returns a default object that maps country codes to currency co
 </script>
 ```
 
-_Note_: UMD format is also available (`index.umd.js`).
+_Note_: [UMD](https://github.com/umdjs/umd) is available in `index.umd.js`.
 
 ### NodeJS
 ```js
@@ -45,9 +48,11 @@ console.log( currency ); // {AF: "AFN", AX: "EUR", ... }
 
 ## Notes
 
-- All the countries are being imported.
+- All the countries included (currently `249`).
 - For `Antarctica` (`AQ`), the currency `US Dollars` (`USD`) is being assumed.
 - For `Palestine` (`PS`), the currency `New Israeli Sheqel` (`ILS`) is being assumed.
+
+> _Suggestions? Please [open an Issue](https://github.com/thiagodp/country-to-currency/issues/new)._
 
 ## License
 
