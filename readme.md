@@ -21,29 +21,36 @@ This library exports a default object that maps country codes to currency codes.
 
 ### Browser - without installing anything
 
+Global:
 ```html
-<script type="module" >
-    import currency from "https://unpkg.com/country-to-currency/index.esm.js";
-    console.log( currency ); // {AF: "AFN", AX: "EUR", ... }
-    console.log( currency[ 'US' ] ); // USD
-    console.log( currency[ 'DE' ] ); // EUR
-    console.log( currency[ 'BR' ] ); // BRL
+<script crossorigin src="https://unpkg.com/country-to-currency" ></script>
+<script>
+  console.log( countryToCurrency ); // {AF: "AFN", AX: "EUR", ... }
+  console.log( countryToCurrency[ 'US' ] ); // USD
+  console.log( countryToCurrency[ 'DE' ] ); // EUR
+  console.log( countryToCurrency[ 'BR' ] ); // BRL
 </script>
 ```
 
-_Note_: [UMD](https://github.com/umdjs/umd) is available in `index.umd.js`.
+ESM:
+```html
+<script type="module" >
+  import countryToCurrency from "https://unpkg.com/country-to-currency/index.esm.js";
+  console.log( countryToCurrency[ 'US' ] ); // USD
+</script>
+```
 
 ### NodeJS
 ```js
-const currency = require( 'country-to-currency' );
-console.log( currency ); // {AF: "AFN", AX: "EUR", ... }
+const countryToCurrency = require( 'country-to-currency' );
+console.log( countryToCurrency[ 'US' ] ); // USD
 ```
 
 ### DenoJS
 
 ```js
-import currency from "https://unpkg.com/country-to-currency/index.esm.js";
-console.log( currency ); // {AF: "AFN", AX: "EUR", ... }
+import countryToCurrency from "https://unpkg.com/country-to-currency/index.esm.js";
+console.log( countryToCurrency[ 'US' ] ); // USD
 ```
 
 ## Notes
