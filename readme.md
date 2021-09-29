@@ -1,3 +1,6 @@
+[![npm (tag)](https://img.shields.io/npm/v/country-to-currency?color=green&label=NPM&style=for-the-badge)](https://github.com/thiagodp/country-to-currency/releases)
+[![License](https://img.shields.io/npm/l/country-to-currency.svg?style=for-the-badge&color=green)](https://github.com/thiagodp/country-to-currency/blob/master/LICENSE.txt)
+
 # country-to-currency
 
 > Maps country codes ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)) to their default currency codes ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)).

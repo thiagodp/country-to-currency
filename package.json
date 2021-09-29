@@ -50,6 +50,6 @@
     "build": "microbundle",
     "test": "echo \"No tests\"",
     "preversion": "npm run gen && npm run build",
-    "postversion": "git push && git push --tags"
+    "postversion": "echo \"Don't forget to push the tags.\""
   }
 }
