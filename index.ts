@@ -40,7 +40,7 @@ export default {
   CD: 'CDF',
   CF: 'XAF',
   CG: 'CDF',
-  CH: 'CHE',
+  CH: 'CHF',
   CI: 'XOF',
   CK: 'NZD',
   CL: 'CLF',

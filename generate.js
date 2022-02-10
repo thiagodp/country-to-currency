@@ -59,6 +59,8 @@ const inclusionsOrFixes = [
   { countryCode: 'PS', currencyCode: 'ILS' },
   // According to ISO 4217, South Korea's (country code KR) uses currency 'KRW'. Thanks @MunjaeLee for pointing it out.
   { countryCode: 'KR', currencyCode: 'KRW' },
+  // According to Wikipedia, Switzerland uses 'CHF'. Thanks @betabong for pointing it out.
+  { countryCode: 'CH', currencyCode: 'CHF' },
 ];
 
 let inclusions = 0;
