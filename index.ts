@@ -43,7 +43,7 @@ export default {
   CH: 'CHF',
   CI: 'XOF',
   CK: 'NZD',
-  CL: 'CLF',
+  CL: 'CLP',
   CM: 'XAF',
   CN: 'CNY',
   CO: 'COP',
