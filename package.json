@@ -33,7 +33,7 @@
   "devDependencies": {
     "country-list": "latest",
     "currency-codes": "latest",
-    "microbundle": "^0.12.4"
+    "microbundle": "^0.15.0"
   },
   "files": [
     "index.*"
