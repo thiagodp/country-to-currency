@@ -59,9 +59,13 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 
 ## Notes
 
-- All the countries included (currently `249`).
-- For `Antarctica` (`AQ`), the currency `US Dollars` (`USD`) is being assumed.
-- For `Palestine` (`PS`), the currency `New Israeli Sheqel` (`ILS`) is being assumed.
+- All the countries included - currently `249`.
+- For `Antarctica` (`AQ`), the currency `USD` is being assumed.
+- For `Palestine` (`PS`), the currency `ILS` is being assumed.
+- For `South Korea` (`KR`), the currency `KRW` is being assumed.
+- For `South Korea` (`KR`), the currency `KRW` is being assumed.
+- For `Switzerland` (`CH`), the currenty `CHF` is being assumed.
+- For `Chile` (`CLF`), the currency `CLP` is being assumed.
 
 > _Suggestions? Please [open an Issue](https://github.com/thiagodp/country-to-currency/issues/new)._
 
