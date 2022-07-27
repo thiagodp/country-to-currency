@@ -6,9 +6,9 @@
 
 > Maps country codes ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)) to their default currency codes ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)).
 
-⚡ Just 2,3 KB and no external dependencies.
+⚡ Just 2.3 KB (unzipped), no external dependencies.
 
-🎯 Works with browsers, NodeJS and DenoJS. JavaScript and TypeScript.
+🎯 Work with browsers, NodeJS, and DenoJS. JavaScript and TypeScript.
 
 ## Install
 
@@ -63,7 +63,6 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 - For `Antarctica` (`AQ`), the currency `USD` is being assumed.
 - For `Palestine` (`PS`), the currency `ILS` is being assumed.
 - For `South Korea` (`KR`), the currency `KRW` is being assumed.
-- For `South Korea` (`KR`), the currency `KRW` is being assumed.
 - For `Switzerland` (`CH`), the currenty `CHF` is being assumed.
 - For `Chile` (`CLF`), the currency `CLP` is being assumed.
 
@@ -71,6 +70,6 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 
 ## License
 
-This library is inspired by [currency-code-map](https://github.com/michaelrhodes/currency-code-map) from Michael Rhodes. This project adds new currencies, offers support to browsers and DenoJS, updates dependencies and provide new internal scripts.
+This library is inspired by Michael Rhodes' [currency-code-map](https://github.com/michaelrhodes/currency-code-map). The current project adds new currencies, offers support to browsers and DenoJS, updates dependencies and provide new internal scripts.
 
 [MIT](LICENSE.txt) © [Thiago Delgado Pinto](https://github.com/thiagodp)
