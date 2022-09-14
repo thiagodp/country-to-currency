@@ -225,7 +225,7 @@ export default {
   UG: 'UGX',
   UM: 'USD',
   US: 'USD',
-  UY: 'UYI',
+  UY: 'UYU',
   UZ: 'UZS',
   VA: 'EUR',
   VC: 'XCD',
