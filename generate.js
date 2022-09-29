@@ -63,6 +63,8 @@ const inclusionsOrFixes = [
   { countryCode: 'CH', currencyCode: 'CHF' },
   // According to Wikipedia, CLF is a non-circulating currency for Chile, the Chilean peso is CLP.
   { countryCode: 'CL', currencyCode: 'CLP' },
+  // According to Wikipedia, Uruguay uses 'UYU'. Thanks @marneborn for pointing it out.
+  { countryCode: 'UY', currencyCode: 'UYU' },
 ];
 
 let inclusions = 0;

@@ -65,6 +65,7 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 - For `South Korea` (`KR`), the currency `KRW` is being assumed.
 - For `Switzerland` (`CH`), the currenty `CHF` is being assumed.
 - For `Chile` (`CLF`), the currency `CLP` is being assumed.
+- For `Uruguay` (`UY`), the currency `UYU` is being assumed.
 
 > _Suggestions? Please [open an Issue](https://github.com/thiagodp/country-to-currency/issues/new)._
 
