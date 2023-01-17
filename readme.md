@@ -66,11 +66,12 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 - For `Switzerland` (`CH`), the currenty `CHF` is being assumed.
 - For `Chile` (`CLF`), the currency `CLP` is being assumed.
 - For `Uruguay` (`UY`), the currency `UYU` is being assumed.
+- For `Croatia` (`HR`), the currency `EUR` is being assumed since January 1st, 2023.
 
 > _Suggestions? Please [open an Issue](https://github.com/thiagodp/country-to-currency/issues/new)._
 
 ## License
 
-This library is inspired by Michael Rhodes' [currency-code-map](https://github.com/michaelrhodes/currency-code-map). The current project adds new currencies, offers support to browsers and DenoJS, updates dependencies and provide new internal scripts.
+This library is inspired by Michael Rhodes' [currency-code-map](https://github.com/michaelrhodes/currency-code-map). The current project adds new currencies, offers support to browsers and DenoJS, updates dependencies, and provides new internal scripts.
 
 [MIT](LICENSE.txt) © [Thiago Delgado Pinto](https://github.com/thiagodp)
