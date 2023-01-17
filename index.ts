@@ -92,7 +92,7 @@ export default {
   GY: 'GYD',
   HK: 'HKD',
   HN: 'HNL',
-  HR: 'HRK',
+  HR: 'EUR',
   HT: 'HTG',
   HU: 'HUF',
   ID: 'IDR',

@@ -65,6 +65,8 @@ const inclusionsOrFixes = [
   { countryCode: 'CL', currencyCode: 'CLP' },
   // According to Wikipedia, Uruguay uses 'UYU'. Thanks @marneborn for pointing it out.
   { countryCode: 'UY', currencyCode: 'UYU' },
+  // According to Wikipedia and Stripe, Crotia moved from HRK (Kuna) to the EUR (Euro) on January 1, 2023 (@xaphod)
+  { countryCode: 'HR', currencyCode: 'EUR' },
 ];
 
 let inclusions = 0;
