@@ -57,6 +57,8 @@ const inclusionsOrFixes = [
   { countryCode: 'AQ', currencyCode: 'USD' },
   // According to Google, Palestine uses the currency 'New Israeli Sheqel', code 'ILS'
   { countryCode: 'PS', currencyCode: 'ILS' },
+  // According to Wikipedia, Turkey uses 'Turkish lira', code 'TRY'. Thanks @kylem123
+  { countryCode: 'TR', currencyCode: 'TRY' },
   // According to ISO 4217, South Korea's (country code KR) uses currency 'KRW'. Thanks @MunjaeLee for pointing it out.
   { countryCode: 'KR', currencyCode: 'KRW' },
   // According to Wikipedia, Switzerland uses 'CHF'. Thanks @betabong for pointing it out.

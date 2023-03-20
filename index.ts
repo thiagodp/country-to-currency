@@ -216,7 +216,6 @@ export default {
   TM: 'TMT',
   TN: 'TND',
   TO: 'TOP',
-  TR: 'TRY',
   TT: 'TTD',
   TV: 'AUD',
   TW: 'TWD',
@@ -247,5 +246,6 @@ export default {
   LA: 'LAK',
   MK: 'MKD',
   AQ: 'USD',
-  PS: 'ILS'
+  PS: 'ILS',
+  TR: 'TRY'
 }
