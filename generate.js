@@ -59,16 +59,18 @@ const inclusionsOrFixes = [
   { countryCode: 'PS', currencyCode: 'ILS' },
   // According to Wikipedia, Turkey uses 'Turkish lira', code 'TRY'. Thanks @kylem123
   { countryCode: 'TR', currencyCode: 'TRY' },
-  // According to ISO 4217, South Korea's (country code KR) uses currency 'KRW'. Thanks @MunjaeLee for pointing it out.
+  // According to ISO 4217, South Korea's (country code KR) uses currency 'KRW'. Thanks @MunjaeLee
   { countryCode: 'KR', currencyCode: 'KRW' },
-  // According to Wikipedia, Switzerland uses 'CHF'. Thanks @betabong for pointing it out.
+  // According to Wikipedia, Switzerland uses 'CHF'. Thanks @betabong
   { countryCode: 'CH', currencyCode: 'CHF' },
   // According to Wikipedia, CLF is a non-circulating currency for Chile, the Chilean peso is CLP.
   { countryCode: 'CL', currencyCode: 'CLP' },
-  // According to Wikipedia, Uruguay uses 'UYU'. Thanks @marneborn for pointing it out.
+  // According to Wikipedia, Uruguay uses 'UYU'. Thanks @marneborn
   { countryCode: 'UY', currencyCode: 'UYU' },
-  // According to Wikipedia and Stripe, Crotia moved from HRK (Kuna) to the EUR (Euro) on January 1, 2023 (@xaphod)
+  // According to Wikipedia and Stripe, Crotia moved from HRK (Kuna) to the EUR (Euro) on January 1, 2023. Thanks @xaphod
   { countryCode: 'HR', currencyCode: 'EUR' },
+  // According to ISO 4217, Netherlands Antilles ('AN') uses Netherlands Antillean Guilder, code 'ANG'. Thanks @jayPare
+  { countryCode: 'AN', currencyCode: 'ANG' },
 ];
 
 let inclusions = 0;
@@ -97,8 +99,9 @@ fs.writeFileSync( 'index.ts', content );
 //
 
 console.log( 'index.ts generated.' );
-console.log( countries.length, '\timported countries');
+console.log( countries.length + inclusions, '\ttotal');
+console.log( countries.length, '\timported');
+console.log( notFound.length, '\twere not found', notFound.length > 0 ? notFound : '' );
 console.log( inclusions, '\tmanually included.' );
 console.log( inclusionsOrFixes.length - inclusions, '\tmanually fixed.' );
-console.log( notFound.length, '\twere not found', notFound.length > 0 ? notFound : '' );
 

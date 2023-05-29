@@ -247,5 +247,6 @@ export default {
   MK: 'MKD',
   AQ: 'USD',
   PS: 'ILS',
-  TR: 'TRY'
+  TR: 'TRY',
+  AN: 'ANG'
 }
