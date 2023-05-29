@@ -59,7 +59,7 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 
 ## Notes
 
-- Countries included: `253`.
+- Countries included: `250`.
 - For `Antarctica` (`AQ`), the currency `USD` is being assumed.
 - For `Palestine` (`PS`), the currency `ILS` is being assumed.
 - For `South Korea` (`KR`), the currency `KRW` is being assumed.

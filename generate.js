@@ -2,19 +2,19 @@ let countries = require( 'country-list/data' );
 let currencies = require( 'currency-codes/data' );
 const fs = require( 'fs' );
 
-const r = {};
+const result = {};
 let count = 0;
 let notFound = [];
 for ( const country of countries ) {
   for ( const currency of currencies ) {
     const countryName = country.name.split( ',' )[ 0 ];
     if ( currency.countries.join( ',' ).indexOf( countryName ) >= 0 ) {
-      r[ country.code ] = currency.code;
+      result[ country.code ] = currency.code;
       ++count;
       break;
     }
   }
-  if ( ! r[ country.code ] ) {
+  if ( ! result[ country.code ] ) {
     notFound.push( country );
   }
 }
@@ -22,24 +22,24 @@ for ( const country of countries ) {
 if ( notFound.length > 0 ) {
 
   const allNotFound = [ ... notFound ];
-  for ( const curr of currencies ) {
-    for ( const currCountry of curr.countries ) {
+  for ( const currency of currencies ) {
+    for ( const currencyCountry of currency.countries ) {
 
-      const c = currCountry
+      const currencyCountryName = currencyCountry
         .replace( /(\([A-z ]+\)| ?\[|\])/g, '' )
         .replace( /’/, "'" )
         .trim()
         .toLowerCase();
 
-      for ( const nf of allNotFound ) {
+      for ( const countryNotFound of allNotFound ) {
 
-        const nfName = nf.name.replace( /(\(|\))/g, '' )
+        const nameNotFound = countryNotFound.name.replace( /(\(|\))/g, '' )
           .trim()
           .toLowerCase();
 
-        if ( nfName.indexOf( c ) >= 0 ) {
-          notFound = notFound.filter( f => f.code != nf.code );
-          r[ nf.code ] = curr.code;
+        if ( nameNotFound.indexOf( currencyCountryName ) >= 0 ) {
+          notFound = notFound.filter( f => f.code != countryNotFound.code );
+          result[ countryNotFound.code ] = currency.code;
           ++count;
         }
 
@@ -75,18 +75,31 @@ const inclusionsOrFixes = [
 
 let inclusions = 0;
 for ( const item of inclusionsOrFixes ) {
-  if ( ! r[ item.countryCode ] ) {
+  if ( ! result[ item.countryCode ] ) {
     inclusions++;
   }
-  r[ item.countryCode ] = item.currencyCode;
+  result[ item.countryCode ] = item.currencyCode;
 }
+
+//
+// Sort keys
+//
+
+let countryCount = 0;
+const sorted = Object.keys( result )
+  .sort()
+  .reduce( ( accumulator, key ) => {
+      ++countryCount;
+      accumulator[ key ] = result[ key ];
+      return accumulator;
+    }, {} );
 
 //
 // Generate file
 //
 
 const content = 'export default ' +
-  JSON.stringify( r, null, 2 )
+  JSON.stringify( sorted, null, 2 )
     .replace(/"([A-Z]{2})":/g, '$1:')
     .replace(/"/g, "'") +
   "\n";
@@ -99,9 +112,10 @@ fs.writeFileSync( 'index.ts', content );
 //
 
 console.log( 'index.ts generated.' );
-console.log( countries.length + inclusions, '\ttotal');
-console.log( countries.length, '\timported');
-console.log( notFound.length, '\twere not found', notFound.length > 0 ? notFound : '' );
-console.log( inclusions, '\tmanually included.' );
-console.log( inclusionsOrFixes.length - inclusions, '\tmanually fixed.' );
+console.log( countryCount, '\tcountries in which:' );
+console.log( '\t', countries.length, '\tcountries were imported;');
+console.log( '\t', notFound.length, '\tcountries were originally not found for currency data;' );
+if ( notFound.length > 0 ) console.log( notFound );
+console.log( '\t', inclusions, '\tmanual inclusions;' );
+console.log( '\t', inclusionsOrFixes.length - inclusions, '\tmanual fixes.' );
 
