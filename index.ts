@@ -209,7 +209,7 @@ export default {
   SR: 'SRD',
   SS: 'SSP',
   ST: 'STN',
-  SV: 'SVC',
+  SV: 'USD',
   SX: 'ANG',
   SY: 'SYP',
   SZ: 'SZL',

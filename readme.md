@@ -67,6 +67,7 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 - For `Chile` (`CLF`), the currency `CLP` is being assumed.
 - For `Uruguay` (`UY`), the currency `UYU` is being assumed.
 - For `Croatia` (`HR`), the currency `EUR` is being assumed since January 1st, 2023.
+- For `El Salvador` (`SV`), the currency `USD` is being assumed.
 
 > _Suggestions? Please [open an Issue](https://github.com/thiagodp/country-to-currency/issues/new)._
 

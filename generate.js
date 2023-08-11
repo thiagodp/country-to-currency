@@ -71,6 +71,8 @@ const inclusionsOrFixes = [
   { countryCode: 'HR', currencyCode: 'EUR' },
   // According to ISO 4217, Netherlands Antilles ('AN') uses Netherlands Antillean Guilder, code 'ANG'. Thanks @jayPare
   { countryCode: 'AN', currencyCode: 'ANG' },
+  // According to Wikipedia, El Salvador (SV) change from 'SVC' to 'USD' since 2001. Thanks @chaitanya-d
+  { countryCode: 'SV', currencyCode: 'USD' },
 ];
 
 let inclusions = 0;
