@@ -50,6 +50,6 @@
     "build": "microbundle --no-sourcemap",
     "test": "echo \"No tests\"",
     "preversion": "npm run gen && npm run build",
-    "postversion": "echo \"Don't forget to push the tags.\""
+    "postversion": "echo \"Don't forget to push the tags and publish the version.\""
   }
 }
