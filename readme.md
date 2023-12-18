@@ -6,7 +6,7 @@
 
 > Maps country codes ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)) to their default currency codes ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)).
 
-⚡ Just 2.3 KB (unzipped), no external dependencies.
+⚡ Just 2.3 KB (uncompressed), no external dependencies.
 
 🎯 Work with browsers, NodeJS, and DenoJS. JavaScript and TypeScript.
 
@@ -63,11 +63,12 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 - For `Antarctica` (`AQ`), the currency `USD` is being assumed.
 - For `Palestine` (`PS`), the currency `ILS` is being assumed.
 - For `South Korea` (`KR`), the currency `KRW` is being assumed.
-- For `Switzerland` (`CH`), the currenty `CHF` is being assumed.
+- For `Switzerland` (`CH`), the currency `CHF` is being assumed.
 - For `Chile` (`CLF`), the currency `CLP` is being assumed.
 - For `Uruguay` (`UY`), the currency `UYU` is being assumed.
 - For `Croatia` (`HR`), the currency `EUR` is being assumed since January 1st, 2023.
 - For `El Salvador` (`SV`), the currency `USD` is being assumed.
+- For `South Georgia and the South Sandwich Islands` (`GS`), the currency `FKP` is being assumed.
 
 > _Suggestions? Please [open an Issue](https://github.com/thiagodp/country-to-currency/issues/new)._
 

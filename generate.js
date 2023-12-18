@@ -73,6 +73,8 @@ const inclusionsOrFixes = [
   { countryCode: 'AN', currencyCode: 'ANG' },
   // According to Wikipedia, El Salvador (SV) change from 'SVC' to 'USD' since 2001. Thanks @chaitanya-d
   { countryCode: 'SV', currencyCode: 'USD' },
+  // According to Wikipedia and https://gov.gs, South Georgia and the South Sandwich Islands ('GS') uses the currency 'Falkland Islands Pound' ('FKP'). Thanks @danielrentz
+  { countryCode: 'GS', currencyCode: 'FKP' },
 ];
 
 let inclusions = 0;

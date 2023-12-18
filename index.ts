@@ -89,7 +89,7 @@ export default {
   GP: 'EUR',
   GQ: 'XAF',
   GR: 'EUR',
-  GS: 'GEL',
+  GS: 'FKP',
   GT: 'GTQ',
   GU: 'USD',
   GW: 'XOF',
