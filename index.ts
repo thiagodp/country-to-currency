@@ -1,4 +1,4 @@
-export default {
+const countryToCurrency = {
   AD: 'EUR',
   AE: 'AED',
   AF: 'AFN',
@@ -249,4 +249,10 @@ export default {
   ZA: 'ZAR',
   ZM: 'ZMW',
   ZW: 'ZWL'
-}
+} as const;
+
+export default countryToCurrency;
+
+export type Countries = keyof typeof countryToCurrency;
+
+export type Currencies = typeof countryToCurrency[Countries];

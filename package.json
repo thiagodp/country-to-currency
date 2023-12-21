@@ -45,10 +45,10 @@
   "module": "index.esm.js",
   "types": "index.d.ts",
   "scripts": {
-    "gen": "node generate.js",
-    "prebuild": "npm run gen",
-    "build": "microbundle --no-sourcemap",
     "test": "echo \"No tests\"",
+    "gen": "node generate.js",
+    "build": "microbundle --no-sourcemap",
+    "all": "npm run gen && npm run build",
     "preversion": "npm run gen && npm run build",
     "postversion": "echo \"Don't forget to push the tags and publish the version.\""
   }

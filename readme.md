@@ -23,6 +23,17 @@ This library exports a default object that maps country codes to currency codes.
 [Available formats]() include [UMD](https://github.com/umdjs/umd) (therefore [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) and [CommonJS](http://wiki.commonjs.org/wiki/CommonJS)) and
 [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
+### TypeScript
+
+From version `1.1.0` on, there are two union types available (TypeScript 3.4+ only):
+- `Currencies`, that contains all the currencies;
+- `Countries`, that contains all the countries.
+
+Example (TypeScript on NodeJS):
+```typescript
+  import countryToCurrency, { Currencies, Countries } from "country-to-currency";
+```
+
 ### Browser - without installing anything
 
 Global:

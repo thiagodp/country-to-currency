@@ -102,11 +102,15 @@ const sorted = Object.keys( result )
 // Generate file
 //
 
-const content = 'export default ' +
+const content = 'const countryToCurrency = ' +
   JSON.stringify( sorted, null, 2 )
     .replace(/"([A-Z]{2})":/g, '$1:')
     .replace(/"/g, "'") +
-  "\n";
+    ' as const;\n\n' + // TypeScript 3.4+ (2019)
+    'export default countryToCurrency;\n\n' +
+    'export type Countries = keyof typeof countryToCurrency;\n\n' +
+    'export type Currencies = typeof countryToCurrency[Countries];\n'
+  ;
 
 fs.writeFileSync( 'index.ts', content );
 
