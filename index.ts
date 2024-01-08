@@ -161,7 +161,7 @@ const countryToCurrency = {
   MZ: 'MZN',
   NA: 'NAD',
   NC: 'XPF',
-  NE: 'NGN',
+  NE: 'XOF',
   NF: 'AUD',
   NG: 'NGN',
   NI: 'NIO',
