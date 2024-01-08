@@ -50,7 +50,7 @@ const countryToCurrency = {
   CN: 'CNY',
   CO: 'COP',
   CR: 'CRC',
-  CU: 'CUC',
+  CU: 'CUP',
   CV: 'CVE',
   CW: 'ANG',
   CX: 'AUD',
