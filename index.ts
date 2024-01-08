@@ -243,7 +243,7 @@ const countryToCurrency = {
   VN: 'VND',
   VU: 'VUV',
   WF: 'XPF',
-  WS: 'USD',
+  WS: 'WST',
   YE: 'YER',
   YT: 'EUR',
   ZA: 'ZAR',
