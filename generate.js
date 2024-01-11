@@ -128,11 +128,8 @@ fs.writeFileSync( 'index.ts', content );
 // Report
 //
 
-console.log( 'index.ts generated.' );
-console.log( countryCount, '\tcountries in which:' );
-console.log( '\t', countries.length, '\tcountries were imported;');
-console.log( '\t', notFound.length, '\tcountries were originally not found for currency data;' );
-if ( notFound.length > 0 ) console.log( notFound );
-console.log( '\t', inclusions, '\tmanual inclusions;' );
-console.log( '\t', inclusionsOrFixes.length - inclusions, '\tmanual fixes.' );
-
+console.log( 'index.ts generated sucessfully.\n' );
+console.log( countryCount, 'countries total:' );
+console.log( '\t', countries.length, '\timported');
+console.log( '\t', inclusions - notFound.length, '\tincluded' );
+console.log( '\t', inclusionsOrFixes.length - inclusions + notFound.length, '\tfixed' );
