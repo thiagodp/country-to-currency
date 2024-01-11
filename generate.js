@@ -71,10 +71,18 @@ const inclusionsOrFixes = [
   { countryCode: 'HR', currencyCode: 'EUR' },
   // According to ISO 4217, Netherlands Antilles ('AN') uses Netherlands Antillean Guilder, code 'ANG'. Thanks @jayPare
   { countryCode: 'AN', currencyCode: 'ANG' },
-  // According to Wikipedia, El Salvador (SV) change from 'SVC' to 'USD' since 2001. Thanks @chaitanya-d
+  // According to Wikipedia, El Salvador (SV) changed from 'SVC' to 'USD' since 2001. Thanks @chaitanya-d
   { countryCode: 'SV', currencyCode: 'USD' },
   // According to Wikipedia and https://gov.gs, South Georgia and the South Sandwich Islands ('GS') uses the currency 'Falkland Islands Pound' ('FKP'). Thanks @danielrentz
   { countryCode: 'GS', currencyCode: 'FKP' },
+  // According to Wikipedia, Cuba (CU) changed from 'CUC' to 'CUP' since 2021. Thanks @jasongitmail
+  { countryCode: 'CU', currencyCode: 'CUP' },
+  // According to Wikipedia, Hungary (HR) uses Forint ('HUF'). Thanks @jasongitmail
+  { countryCode: 'HR', currencyCode: 'HUF' },
+  // According to Wikipedia, Samoa (WS) uses Tālā ('WST'). Thanks @jasongitmail
+  { countryCode: 'WS', currencyCode: 'WST' },
+  // According to Wikipedia, Niger (NE) uses West African CFA Franc ('XOF'). Thanks @danielrentz
+  { countryCode: 'NE', currencyCode: 'XOF' },
 ];
 
 let inclusions = 0;
@@ -102,7 +110,8 @@ const sorted = Object.keys( result )
 // Generate file
 //
 
-const content = 'const countryToCurrency = ' +
+const content = '// This is a generated file - please do not modify it\n' +
+  'const countryToCurrency = ' +
   JSON.stringify( sorted, null, 2 )
     .replace(/"([A-Z]{2})":/g, '$1:')
     .replace(/"/g, "'") +

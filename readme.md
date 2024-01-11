@@ -72,16 +72,20 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 
 - Countries included: `250`.
 - For `Antarctica` (`AQ`), the currency `USD` is being assumed.
+- For `Chile` (`CLF`), the currency `CLP` is being assumed.
+- For `Croatia` (`HR`), the currency `EUR` is being assumed since January 1st, 2023.
+- For `Cuba` (`CU`), the currency `CUP` is being assumed since 2021.
+- For `El Salvador` (`SV`), the currency `USD` is being assumed.
+- For `Hungary` (`HR`), the currency `HUF` is being assumed.
+- For `Niger` (`NE`), the currency `XOF` is being assumed.
 - For `Palestine` (`PS`), the currency `ILS` is being assumed.
+- For `Samoa` (`WS`), the currency `WST` is being assumed.
+- For `South Georgia and the South Sandwich Islands` (`GS`), the currency `FKP` is being assumed.
 - For `South Korea` (`KR`), the currency `KRW` is being assumed.
 - For `Switzerland` (`CH`), the currency `CHF` is being assumed.
-- For `Chile` (`CLF`), the currency `CLP` is being assumed.
 - For `Uruguay` (`UY`), the currency `UYU` is being assumed.
-- For `Croatia` (`HR`), the currency `EUR` is being assumed since January 1st, 2023.
-- For `El Salvador` (`SV`), the currency `USD` is being assumed.
-- For `South Georgia and the South Sandwich Islands` (`GS`), the currency `FKP` is being assumed.
 
-> _Suggestions? Please [open an Issue](https://github.com/thiagodp/country-to-currency/issues/new)._
+> _Suggestions? Please [open an Issue](https://github.com/thiagodp/country-to-currency/issues/new). Pull Requests? Make sure to edit [generate.js](generate.js) instead of [index.ts](index.ts)._
 
 ## License
 
