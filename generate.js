@@ -85,6 +85,8 @@ const inclusionsOrFixes = [
   { countryCode: 'NE', currencyCode: 'XOF' },
   // Republic of the Congo (CG) uses 'Central African CFA Franc' (XAF), according to Wikipedia. Thanks @jasongitmail
   { countryCode: 'CG', currencyCode: 'XAF' },
+  // Dominican Republic (DM) uses 'East Caribbean Dollar' (XCD), according to Wikipedia. Thanks @jasongitmail
+  { countryCode: 'DM', currencyCode: 'XCD' },
 ];
 
 let inclusions = 0;

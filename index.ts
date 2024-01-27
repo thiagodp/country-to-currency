@@ -60,7 +60,7 @@ const countryToCurrency = {
   DE: 'EUR',
   DJ: 'DJF',
   DK: 'DKK',
-  DM: 'DOP',
+  DM: 'XCD',
   DO: 'DOP',
   DZ: 'DZD',
   EC: 'USD',
