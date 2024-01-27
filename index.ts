@@ -42,7 +42,7 @@ const countryToCurrency = {
   CC: 'AUD',
   CD: 'CDF',
   CF: 'XAF',
-  CG: 'CDF',
+  CG: 'XAF',
   CH: 'CHF',
   CI: 'XOF',
   CK: 'NZD',

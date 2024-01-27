@@ -83,6 +83,8 @@ const inclusionsOrFixes = [
   { countryCode: 'WS', currencyCode: 'WST' },
   // Niger (NE) uses West African CFA Franc (XOF), according to Wikipedia. Thanks @danielrentz
   { countryCode: 'NE', currencyCode: 'XOF' },
+  // Republic of the Congo (CG) uses 'Central African CFA Franc' (XAF), according to Wikipedia. Thanks @jasongitmail
+  { countryCode: 'CG', currencyCode: 'XAF' },
 ];
 
 let inclusions = 0;

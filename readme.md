@@ -79,6 +79,7 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 - For `Hungary` (`HU`), the currency `HUF` is being assumed.
 - For `Niger` (`NE`), the currency `XOF` is being assumed.
 - For `Palestine` (`PS`), the currency `ILS` is being assumed.
+- For `Republic of the Congo` (`CG`), the currency `XAF` is being assumed.
 - For `Samoa` (`WS`), the currency `WST` is being assumed.
 - For `South Georgia and the South Sandwich Islands` (`GS`), the currency `FKP` is being assumed.
 - For `South Korea` (`KR`), the currency `KRW` is being assumed.
