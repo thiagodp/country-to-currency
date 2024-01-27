@@ -82,6 +82,7 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 - For `Palestine` (`PS`), the currency `ILS` is being assumed.
 - For `Republic of the Congo` (`CG`), the currency `XAF` is being assumed.
 - For `Samoa` (`WS`), the currency `WST` is being assumed.
+- For `Sierra Leone` (`SL`), the currency `SLE` is being assumed since since January 1st, 2024.
 - For `South Georgia and the South Sandwich Islands` (`GS`), the currency `FKP` is being assumed.
 - For `South Korea` (`KR`), the currency `KRW` is being assumed.
 - For `Switzerland` (`CH`), the currency `CHF` is being assumed.

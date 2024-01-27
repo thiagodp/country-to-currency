@@ -87,6 +87,8 @@ const inclusionsOrFixes = [
   { countryCode: 'CG', currencyCode: 'XAF' },
   // Dominican Republic (DM) uses 'East Caribbean Dollar' (XCD), according to Wikipedia. Thanks @jasongitmail
   { countryCode: 'DM', currencyCode: 'XCD' },
+  // Sierra Leone (SL) uses the new 'Leone' code SLE since January 1st, 2024 - according to European Union (https://publications.europa.eu/code/en/en-5000700.htm#fn*). Thanks @jasongitmail
+  { countryCode: 'SL', currencyCode: 'SLE' },
 ];
 
 let inclusions = 0;
