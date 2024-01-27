@@ -76,7 +76,7 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 - For `Croatia` (`HR`), the currency `EUR` is being assumed since January 1st, 2023.
 - For `Cuba` (`CU`), the currency `CUP` is being assumed since 2021.
 - For `El Salvador` (`SV`), the currency `USD` is being assumed.
-- For `Hungary` (`HR`), the currency `HUF` is being assumed.
+- For `Hungary` (`HU`), the currency `HUF` is being assumed.
 - For `Niger` (`NE`), the currency `XOF` is being assumed.
 - For `Palestine` (`PS`), the currency `ILS` is being assumed.
 - For `Samoa` (`WS`), the currency `WST` is being assumed.

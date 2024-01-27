@@ -53,35 +53,35 @@ if ( notFound.length > 0 ) {
 //
 
 const inclusionsOrFixes = [
-  // Antactica has no official currency, so we will assume 'USD'
+  // Antactica has no official currency, so we will assume USD.
   { countryCode: 'AQ', currencyCode: 'USD' },
-  // According to Google, Palestine uses the currency 'New Israeli Sheqel', code 'ILS'
+  // Palestine uses the currency 'New Israeli Sheqel' (ILS), according to Google.
   { countryCode: 'PS', currencyCode: 'ILS' },
-  // According to Wikipedia, Turkey uses 'Turkish lira', code 'TRY'. Thanks @kylem123
+  // Turkey uses 'Turkish lira' (TRY), according to Wikipedia. Thanks @kylem123
   { countryCode: 'TR', currencyCode: 'TRY' },
-  // According to ISO 4217, South Korea's (country code KR) uses currency 'KRW'. Thanks @MunjaeLee
+  // South Korea (KR) uses currency 'KRW', according to ISO 4217. Thanks @MunjaeLee
   { countryCode: 'KR', currencyCode: 'KRW' },
-  // According to Wikipedia, Switzerland uses 'CHF'. Thanks @betabong
+  // Switzerland uses 'CHF', according to Wikipedia. Thanks @betabong
   { countryCode: 'CH', currencyCode: 'CHF' },
-  // According to Wikipedia, CLF is a non-circulating currency for Chile, the Chilean peso is CLP.
+  // Chile uses 'Chilean peso' (CLP), and 'CLF' is a non-circulating currency, according to Wikipedia.
   { countryCode: 'CL', currencyCode: 'CLP' },
-  // According to Wikipedia, Uruguay uses 'UYU'. Thanks @marneborn
+  // Uruguay uses 'UYU', according to Wikipedia. Thanks @marneborn
   { countryCode: 'UY', currencyCode: 'UYU' },
-  // According to Wikipedia and Stripe, Crotia moved from HRK (Kuna) to the EUR (Euro) on January 1, 2023. Thanks @xaphod
+  // Crotia moved from Kuna (HRK) to Euro (EUR) on January 1, 2023, according to Wikipedia and Stripe. Thanks @xaphod
   { countryCode: 'HR', currencyCode: 'EUR' },
-  // According to ISO 4217, Netherlands Antilles ('AN') uses Netherlands Antillean Guilder, code 'ANG'. Thanks @jayPare
+  // Netherlands Antilles (AN) uses Netherlands Antillean Guilder (ANG), according to ISO 4217. Thanks @jayPare
   { countryCode: 'AN', currencyCode: 'ANG' },
-  // According to Wikipedia, El Salvador (SV) changed from 'SVC' to 'USD' since 2001. Thanks @chaitanya-d
+  // El Salvador (SV) changed from 'SVC' to 'USD' since 2001, according to Wikipedia. Thanks @chaitanya-d
   { countryCode: 'SV', currencyCode: 'USD' },
-  // According to Wikipedia and https://gov.gs, South Georgia and the South Sandwich Islands ('GS') uses the currency 'Falkland Islands Pound' ('FKP'). Thanks @danielrentz
+  // South Georgia and the South Sandwich Islands ('GS') uses the currency 'Falkland Islands Pound' (FKP), according to Wikipedia and https://gov.gs. Thanks @danielrentz
   { countryCode: 'GS', currencyCode: 'FKP' },
-  // According to Wikipedia, Cuba (CU) changed from 'CUC' to 'CUP' since 2021. Thanks @jasongitmail
+  // Cuba (CU) changed from 'CUC' to 'CUP' since 2021, according to Wikipedia. Thanks @jasongitmail
   { countryCode: 'CU', currencyCode: 'CUP' },
-  // According to Wikipedia, Hungary (HR) uses Forint ('HUF'). Thanks @jasongitmail
-  { countryCode: 'HR', currencyCode: 'HUF' },
-  // According to Wikipedia, Samoa (WS) uses Tālā ('WST'). Thanks @jasongitmail
+  // Hungary (HU) uses Forint (HUF), according to Wikipedia. Thanks @jasongitmail
+  { countryCode: 'HU', currencyCode: 'HUF' },
+  // Samoa (WS) uses Tālā ('WST'), according to Wikipedia. Thanks @jasongitmail
   { countryCode: 'WS', currencyCode: 'WST' },
-  // According to Wikipedia, Niger (NE) uses West African CFA Franc ('XOF'). Thanks @danielrentz
+  // Niger (NE) uses West African CFA Franc (XOF), according to Wikipedia. Thanks @danielrentz
   { countryCode: 'NE', currencyCode: 'XOF' },
 ];
 

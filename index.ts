@@ -98,7 +98,7 @@ const countryToCurrency = {
   HK: 'HKD',
   HM: 'AUD',
   HN: 'HNL',
-  HR: 'HUF',
+  HR: 'EUR',
   HT: 'HTG',
   HU: 'HUF',
   ID: 'IDR',
