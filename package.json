@@ -48,8 +48,8 @@
     "test": "echo \"No tests\"",
     "gen": "node generate.js",
     "build": "microbundle --no-sourcemap",
-    "all": "npm run gen && npm run build",
-    "preversion": "npm run gen && npm run build",
+    "all": "pnpm run gen && pnpm run build",
+    "preversion": "pnpm run all",
     "postversion": "echo \"Don't forget to push the tags and publish the version.\""
   }
 }
