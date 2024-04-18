@@ -70,12 +70,6 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 
 ## Notes
 
-<style>
-table {
-  font-size: 12px;
-}
-</style>
-
 - Countries included: `250`
   - Imported: `249`
   - Included: `1`

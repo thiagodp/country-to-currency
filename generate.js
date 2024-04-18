@@ -219,12 +219,12 @@ const notesIndex = lines.findIndex( line => line === '## Notes' );
 const contributeIndex = lines.findIndex( line => line === '## Contribute' );
 
 const notes = [
-  '',
-  '<style>',
-  'table {',
-  '  font-size: 12px;',
-  '}',
-  '</style>',
+  // '',
+  // '<style>',
+  // 'table {',
+  // '  font-size: 12px;',
+  // '}',
+  // '</style>',
   '',
   '- Countries included: `' + countryCount + '`',
   '  - Imported: `' + importedCountriesCount + '`',
