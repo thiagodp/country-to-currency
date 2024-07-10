@@ -1,5 +1,10 @@
 // This is a generated file - please do not modify it
-const countryToCurrency = {
+
+type CountryToCurrencyMap = {
+  [key: string]: string;
+}
+
+const countryToCurrency: CountryToCurrencyMap = {
   AD: 'EUR',
   AE: 'AED',
   AF: 'AFN',

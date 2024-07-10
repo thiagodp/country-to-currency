@@ -179,8 +179,15 @@ const sorted = Object.keys( result )
 // Generate file
 //
 
+const typescriptType = `
+type CountryToCurrencyMap = {
+  [key: string]: string;
+}\n
+`;
+
 const content = '// This is a generated file - please do not modify it\n' +
-  'const countryToCurrency = ' +
+  typescriptType +
+  'const countryToCurrency: CountryToCurrencyMap = ' +
   JSON.stringify( sorted, null, 2 )
     .replace(/"([A-Z]{2})":/g, '$1:')
     .replace(/"/g, "'") +
