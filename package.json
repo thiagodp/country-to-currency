@@ -26,10 +26,9 @@
     "javascript",
     "typescript",
     "browser",
-    "nodejs",
-    "denojs"
+    "node",
+    "deno"
   ],
-  "dependencies": {},
   "devDependencies": {
     "country-list": "latest",
     "currency-codes": "latest",
@@ -38,12 +37,15 @@
   "files": [
     "index.*"
   ],
+  "type": "module",
   "source": "index.ts",
-  "main": "index.js",
-  "browser": "index.umd.js",
-  "unpkg": "index.umd.js",
-  "module": "index.esm.js",
   "types": "index.d.ts",
+  "main": "index.cjs",
+  "exports": "index.js",
+  "module": "index.esm.js",
+  "unpkg": "index.umd.js",
+  "browser": "index.umd.js",
+  "umd:main": "index.umd.js",
   "scripts": {
     "test": "echo \"No tests\"",
     "gen": "node generate.js",

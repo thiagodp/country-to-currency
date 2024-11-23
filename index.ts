@@ -238,7 +238,7 @@ const countryToCurrency = {
   UZ: 'UZS',
   VA: 'EUR',
   VC: 'XCD',
-  VE: 'VES',
+  VE: 'VED',
   VG: 'USD',
   VI: 'USD',
   VN: 'VND',
@@ -249,7 +249,7 @@ const countryToCurrency = {
   YT: 'EUR',
   ZA: 'ZAR',
   ZM: 'ZMW',
-  ZW: 'ZWL'
+  ZW: 'ZWG'
 } as const;
 
 export default countryToCurrency;

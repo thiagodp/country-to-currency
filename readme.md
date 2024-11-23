@@ -16,6 +16,7 @@
 npm i country-to-currency
 ```
 
+
 ## Usage
 
 This library exports a default object that maps country codes to currency codes.
@@ -23,13 +24,15 @@ This library exports a default object that maps country codes to currency codes.
 [Available formats]() include [UMD](https://github.com/umdjs/umd) (therefore [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) and [CommonJS](http://wiki.commonjs.org/wiki/CommonJS)) and
 [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
+👉 Examples available in the folder `examples`.
+
 ### TypeScript
 
 From version `1.1.0` on, there are two union types available (TypeScript 3.4+ only):
 - `Currencies`, that contains all the currencies;
 - `Countries`, that contains all the countries.
 
-Example (TypeScript on NodeJS):
+Example using TypeScript on NodeJS:
 ```typescript
   import countryToCurrency, { Currencies, Countries } from "country-to-currency";
 ```
@@ -57,11 +60,11 @@ ESM:
 
 ### NodeJS
 ```js
-const countryToCurrency = require( 'country-to-currency' );
+const countryToCurrency = require( 'country-to-currency/index.cjs' ); // '/index.cjs' needed since version 2.0
 console.log( countryToCurrency[ 'US' ] ); // USD
 ```
 
-### DenoJS
+### Deno
 
 ```js
 import countryToCurrency from "https://unpkg.com/country-to-currency/index.esm.js";

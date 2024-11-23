@@ -3,7 +3,9 @@ dist
 index*.js
 index.d.ts
 *.mjs
+*.cjs
 *.map
 .vscode
-index.html
 readme-2.md
+test
+deno.lock

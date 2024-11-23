@@ -1,6 +1,10 @@
-let countries = require( 'country-list/data' );
-let currencies = require( 'currency-codes/data' );
-const fs = require( 'fs' );
+// import countries from 'country-list/data.json';
+import currencies from 'currency-codes/data.js';
+import { readFileSync, writeFileSync } from 'node:fs';
+
+// Read countries from the JSON file
+const countries = JSON.parse( readFileSync( './node_modules/country-list/data.json' ).toString() );
+
 
 const result = {};
 let count = 0;
@@ -190,7 +194,7 @@ const content = '// This is a generated file - please do not modify it\n' +
     'export type Currencies = typeof countryToCurrency[Countries];\n'
   ;
 
-fs.writeFileSync( 'index.ts', content );
+writeFileSync( 'index.ts', content );
 
 
 //
@@ -211,7 +215,7 @@ console.log( '\t', fixedCountriesCount, '\tfixed' );
 // Update readme.md
 //
 
-const readmeFileContent = fs.readFileSync( 'readme.md' ).toString();
+const readmeFileContent = readFileSync( 'readme.md' ).toString();
 
 const lines = readmeFileContent.replace( /[\r]+/g, '' ).split( '\n' );
 
@@ -238,5 +242,5 @@ const notes = [
 
 const newLines = lines.slice( 0, notesIndex + 1 ).concat( notes, lines.slice( contributeIndex - 1 ) );
 
-fs.writeFileSync( 'readme.md', newLines.join( '\r\n' ) );
+writeFileSync( 'readme.md', newLines.join( '\r\n' ) );
 
