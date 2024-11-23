@@ -245,6 +245,7 @@ const countryToCurrency = {
   VU: 'VUV',
   WF: 'XPF',
   WS: 'WST',
+  XK: 'EUR',
   YE: 'YER',
   YT: 'EUR',
   ZA: 'ZAR',

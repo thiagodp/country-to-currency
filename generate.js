@@ -143,6 +143,11 @@ const inclusionsOrFixes = [
     country: 'Sierra Leone',
     details: 'Wikipedia and [European Union](https://publications.europa.eu/code/en/en-5000700.htm#fn*)',
     thanks: [ 'jasongitmail', 'thiagodp' ] },
+  // Kosovo is using "XK" as a temporary country code (https://geonames.wordpress.com/2010/03/08/xk-country-code-for-kosovo/) and it's using Euro (EUR) (https://en.wikipedia.org/wiki/Kosovo)
+  { countryCode: 'XK', currencyCode: 'EUR',
+    country: 'Kosovo',
+    details: '[Wikipedia](https://en.wikipedia.org/wiki/Kosovo) and [Geo Names](https://geonames.wordpress.com/2010/03/08/xk-country-code-for-kosovo/)',
+    thanks: [ 'dukesilverr', 'thiagodp' ] },
 ];
 
 // [![GitHub profile picture](https://github.com/thiagodp.png?size=24)](https://github.com/thiagodp)

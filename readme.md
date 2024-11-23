@@ -73,9 +73,9 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 
 ## Notes
 
-- Countries included: `250`
+- Countries included: `251`
   - Imported: `249`
-  - Included: `1`
+  - Included: `2`
   - Fixed: `17`
 - Currencies assumed:
 
@@ -99,6 +99,7 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 | Republic of the Congo (`CG`) | `XAF` | Wikipedia | [@jasongitmail](https://github.com/jasongitmail), [@thiagodp](https://github.com/thiagodp)|
 | Dominican Republic (`DM`) | `XCD` | Wikipedia | [@jasongitmail](https://github.com/jasongitmail), [@thiagodp](https://github.com/thiagodp)|
 | Sierra Leone (`SL`) | `SLE` | Wikipedia and [European Union](https://publications.europa.eu/code/en/en-5000700.htm#fn*) | [@jasongitmail](https://github.com/jasongitmail), [@thiagodp](https://github.com/thiagodp)|
+| Kosovo (`XK`) | `EUR` | [Wikipedia](https://en.wikipedia.org/wiki/Kosovo) and [Geo Names](https://geonames.wordpress.com/2010/03/08/xk-country-code-for-kosovo/) | [@dukesilverr](https://github.com/dukesilverr), [@thiagodp](https://github.com/thiagodp)|
 
 ## Contribute
 
