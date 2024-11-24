@@ -24,7 +24,7 @@ This library exports a default object that maps country codes to currency codes.
 [Available formats]() include [UMD](https://github.com/umdjs/umd) (therefore [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) and [CommonJS](http://wiki.commonjs.org/wiki/CommonJS)) and
 [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
-👉 Examples available in the folder `examples`.
+👉 Examples available in the folder [examples](https://github.com/thiagodp/country-to-currency/tree/master/examples).
 
 ### TypeScript
 
