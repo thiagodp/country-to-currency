@@ -60,7 +60,7 @@ ESM:
 
 ### NodeJS
 ```js
-const countryToCurrency = require( 'country-to-currency/index.cjs' ); // '/index.cjs' needed since version 2.0
+const countryToCurrency = require( 'country-to-currency' ); // v1.x and v2.0.2+
 console.log( countryToCurrency[ 'US' ] ); // USD
 ```
 

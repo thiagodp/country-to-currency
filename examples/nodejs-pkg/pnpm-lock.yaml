@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      country-to-currency:
+        specifier: latest
+        version: 2.0.2
+
+packages:
+
+  country-to-currency@2.0.2:
+    resolution: {integrity: sha512-vM4pJUmhw1EEvfqx12ZpbXqCAHMPp/P6dxtz+V0mT5NKiJaC73cbKk7OPxpGZhno+CthOkIyl+a4VAlToFvX7Q==}
+
+snapshots:
+
+  country-to-currency@2.0.2: {}

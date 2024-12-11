@@ -5,10 +5,10 @@
     "start": "tsc && node example.js"
   },
   "devDependencies": {
-    "@types/node": "^22.9.3",
-    "typescript": "^5.7.2"
+    "@types/node": "^22",
+    "typescript": "^5"
   },
   "dependencies": {
-    "country-to-currency": "^2.0.1"
+    "country-to-currency": "latest"
   }
 }

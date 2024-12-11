@@ -1,0 +1,9 @@
+{
+  "name": "example-nodejs-pkg",
+  "scripts": {
+    "start": "node example.js"
+  },
+  "dependencies": {
+    "country-to-currency": "latest"
+  }
+}
