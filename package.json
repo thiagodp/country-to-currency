@@ -41,7 +41,13 @@
   "source": "index.ts",
   "types": "index.d.ts",
   "main": "index.cjs",
-  "exports": "./index.js",
+  "exports": {
+    ".": {
+      "import": "./index.esm.js",
+      "require": "./index.cjs",
+      "default": "./index.js"
+    }
+  },
   "module": "index.esm.js",
   "unpkg": "index.umd.js",
   "browser": "index.umd.js",
