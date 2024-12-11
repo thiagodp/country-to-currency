@@ -1,6 +1,6 @@
 {
   "name": "country-to-currency",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Map country codes (ISO 3166-1 alpha-2) to their default currency codes (ISO 4217)",
   "license": "MIT",
   "repository": {
