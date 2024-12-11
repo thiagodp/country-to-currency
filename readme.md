@@ -81,7 +81,7 @@ console.log( countryToCurrency[ 'US' ] ); // USD
 
 | Country | Currency | Details | Thanks to |
 |---------|----------|---------|-----------|
-| Antactica (`AQ`) | `USD` | Antactica has no official currency | [@thiagodp](https://github.com/thiagodp)|
+| Antarctica (`AQ`) | `USD` | Antarctica has no official currency | [@thiagodp](https://github.com/thiagodp)|
 | Palestine (`PS`) | `ILS` | Google | [@thiagodp](https://github.com/thiagodp)|
 | Turkey (`TR`) | `TRY` | Wikipedia | [@kylem123](https://github.com/kylem123), [@thiagodp](https://github.com/thiagodp)|
 | South Korea (`KR`) | `KRW` | ISO 4217 | [@MunjaeLee](https://github.com/MunjaeLee), [@thiagodp](https://github.com/thiagodp)|

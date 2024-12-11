@@ -57,9 +57,9 @@ if ( notFound.length > 0 ) {
 //
 
 const inclusionsOrFixes = [
-  // Antactica has no official currency, so we will assume USD.
+  // Antarctica has no official currency, so we will assume USD.
   { countryCode: 'AQ', currencyCode: 'USD',
-    country: 'Antactica', details: 'Antactica has no official currency',
+    country: 'Antarctica', details: 'Antarctica has no official currency',
     thanks: [ 'thiagodp' ]
   },
   // Palestine uses the currency 'New Israeli Sheqel' (ILS), according to Google.
