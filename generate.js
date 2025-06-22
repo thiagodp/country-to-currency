@@ -235,7 +235,7 @@ const notes = [
   // '}',
   // '</style>',
   '',
-  '- Countries included: `' + countryCount + '`',
+  '- Total countries: `' + countryCount + '`',
   '  - Imported: `' + importedCountriesCount + '`',
   '  - Included: `' + includedCountriesCount + '`',
   '  - Fixed: `' + fixedCountriesCount + '`',

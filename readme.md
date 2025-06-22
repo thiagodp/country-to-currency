@@ -71,9 +71,13 @@ import countryToCurrency from "https://unpkg.com/country-to-currency/index.esm.j
 console.log( countryToCurrency[ 'US' ] ); // USD
 ```
 
+## Currency symbols
+
+Do you also need currency symbols? [See how to get them](https://github.com/thiagodp/country-to-currency/issues/28). 💲
+
 ## Notes
 
-- Countries included: `251`
+- Total countries: `251`
   - Imported: `249`
   - Included: `2`
   - Fixed: `17`
