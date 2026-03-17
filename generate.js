@@ -148,6 +148,11 @@ const inclusionsOrFixes = [
     country: 'Kosovo',
     details: '[Wikipedia](https://en.wikipedia.org/wiki/Kosovo) and [Geo Names](https://geonames.wordpress.com/2010/03/08/xk-country-code-for-kosovo/)',
     thanks: [ 'dukesilverr', 'thiagodp' ] },
+    // On 01 January 2026, Bulgaria joined the Eurozone (https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html). Thanks
+  { countryCode: 'BG', currencyCode: 'EUR',
+    country: 'Bulgaria',
+    details: '[On 01 January 2026, Bulgaria joined the Eurozone](https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html)',
+    thanks: [ 'joelpickup', 'thiagodp' ] },
 ];
 
 // [![GitHub profile picture](https://github.com/thiagodp.png?size=24)](https://github.com/thiagodp)

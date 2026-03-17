@@ -80,7 +80,7 @@ Do you also need currency symbols? [See how to get them](https://github.com/thia
 - Total countries: `251`
   - Imported: `249`
   - Included: `2`
-  - Fixed: `17`
+  - Fixed: `18`
 - Currencies assumed:
 
 | Country | Currency | Details | Thanks to |
@@ -104,6 +104,7 @@ Do you also need currency symbols? [See how to get them](https://github.com/thia
 | Dominican Republic (`DM`) | `XCD` | Wikipedia | [@jasongitmail](https://github.com/jasongitmail), [@thiagodp](https://github.com/thiagodp)|
 | Sierra Leone (`SL`) | `SLE` | Wikipedia and [European Union](https://publications.europa.eu/code/en/en-5000700.htm#fn*) | [@jasongitmail](https://github.com/jasongitmail), [@thiagodp](https://github.com/thiagodp)|
 | Kosovo (`XK`) | `EUR` | [Wikipedia](https://en.wikipedia.org/wiki/Kosovo) and [Geo Names](https://geonames.wordpress.com/2010/03/08/xk-country-code-for-kosovo/) | [@dukesilverr](https://github.com/dukesilverr), [@thiagodp](https://github.com/thiagodp)|
+| Bulgaria (`BG`) | `EUR` | [On 01 January 2026, Bulgaria joined the Eurozone](https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html) | [@joelpickup](https://github.com/joelpickup), [@thiagodp](https://github.com/thiagodp)|
 
 ## Contribute
 
