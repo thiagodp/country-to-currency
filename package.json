@@ -30,7 +30,7 @@
     "deno"
   ],
   "devDependencies": {
-    "country-list": "latest",
+    "country-list": "=2.3.0",
     "currency-codes": "latest",
     "microbundle": "^0.15.1"
   },
