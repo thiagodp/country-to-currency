@@ -96,11 +96,6 @@ const inclusionsOrFixes = [
     country: 'Uruguay', details: 'Wikipedia',
     thanks: [ 'marneborn', 'thiagodp' ]
   },
-  // Croatia moved from Kuna (HRK) to Euro (EUR) on January 1, 2023, according to Wikipedia and Stripe. Thanks @xaphod
-  { countryCode: 'HR', currencyCode: 'EUR',
-    country: 'Croatia', details: 'Since January 1st, 2023. Wikipedia and Stripe',
-    thanks: [ 'xaphod', 'thiagodp' ]
-  },
   // Netherlands Antilles (AN) uses Netherlands Antillean Guilder (ANG), according to ISO 4217. Thanks @jayPare
   { countryCode: 'AN', currencyCode: 'ANG',
     country: 'Netherlands Antilles', details: 'ISO 4217',
@@ -117,19 +112,6 @@ const inclusionsOrFixes = [
     details: 'Wikipedia and https://gov.gs',
     thanks: [ 'danielrentz', 'thiagodp' ]
   },
-  // Cuba (CU) changed from 'CUC' to 'CUP' since 2021, according to Wikipedia. Thanks @jasongitmail
-  { countryCode: 'CU', currencyCode: 'CUP',
-    country: 'Cuba', details: 'Wikipedia',
-    thanks: [ 'jasongitmail', 'thiagodp' ]
-  },
-  // Hungary (HU) uses Forint (HUF), according to Wikipedia. Thanks @jasongitmail
-  { countryCode: 'HU', currencyCode: 'HUF',
-    country: 'Hungary', details: 'Wikipedia',
-    thanks: [ 'jasongitmail', 'thiagodp' ] },
-  // Samoa (WS) uses Tālā ('WST'), according to Wikipedia. Thanks @jasongitmail
-  { countryCode: 'WS', currencyCode: 'WST',
-    country: 'Samoa', details: 'Wikipedia',
-    thanks: [ 'jasongitmail', 'thiagodp' ] },
   // Niger (NE) uses West African CFA Franc (XOF), according to Wikipedia. Thanks @danielrentz
   { countryCode: 'NE', currencyCode: 'XOF',
     country: 'Niger', details: 'Wikipedia',
@@ -142,21 +124,11 @@ const inclusionsOrFixes = [
   { countryCode: 'DM', currencyCode: 'XCD',
     country: 'Dominican Republic', details: 'Wikipedia',
     thanks: [ 'jasongitmail', 'thiagodp' ] },
-  // Sierra Leone (SL) uses the new 'Leone' code SLE since January 1st, 2024 - according to European Union (https://publications.europa.eu/code/en/en-5000700.htm#fn*). Thanks @jasongitmail
-  { countryCode: 'SL', currencyCode: 'SLE',
-    country: 'Sierra Leone',
-    details: 'Wikipedia and [European Union](https://publications.europa.eu/code/en/en-5000700.htm#fn*)',
-    thanks: [ 'jasongitmail', 'thiagodp' ] },
   // Kosovo is using "XK" as a temporary country code (https://geonames.wordpress.com/2010/03/08/xk-country-code-for-kosovo/) and it's using Euro (EUR) (https://en.wikipedia.org/wiki/Kosovo)
   { countryCode: 'XK', currencyCode: 'EUR',
     country: 'Kosovo',
     details: '[Wikipedia](https://en.wikipedia.org/wiki/Kosovo) and [Geo Names](https://geonames.wordpress.com/2010/03/08/xk-country-code-for-kosovo/)',
     thanks: [ 'dukesilverr', 'thiagodp' ] },
-    // On 01 January 2026, Bulgaria joined the Eurozone (https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html). Thanks
-  { countryCode: 'BG', currencyCode: 'EUR',
-    country: 'Bulgaria',
-    details: '[On 01 January 2026, Bulgaria joined the Eurozone](https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html)',
-    thanks: [ 'joelpickup', 'thiagodp' ] },
 ];
 
 // [![GitHub profile picture](https://github.com/thiagodp.png?size=24)](https://github.com/thiagodp)
