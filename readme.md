@@ -92,7 +92,7 @@ Do you also need currency symbols? [See how to get them](https://github.com/thia
 | Switzerland (`CH`) | `CHF` | Wikipedia | [@betabong](https://github.com/betabong), [@thiagodp](https://github.com/thiagodp)|
 | Chile (`CL`) | `CLP` | `CLF` is a non-circulating currency. Wikipedia | [@thiagodp](https://github.com/thiagodp)|
 | Uruguay (`UY`) | `UYU` | Wikipedia | [@marneborn](https://github.com/marneborn), [@thiagodp](https://github.com/thiagodp)|
-| Netherlands Antilles (`AN`) | `ANG` | ISO 4217 | [@jayPare](https://github.com/jayPare), [@thiagodp](https://github.com/thiagodp)|
+| Netherlands Antilles (`AN`) | `XCG` | XCG replaced ANG on 2025-07-01 ([Wikipedia](https://en.wikipedia.org/wiki/Caribbean_guilder)) | [@jayPare](https://github.com/jayPare), [@thiagodp](https://github.com/thiagodp)|
 | El Salvador (`SV`) | `USD` | Since 2001. Wikipedia | [@chaitanya-d](https://github.com/chaitanya-d), [@thiagodp](https://github.com/thiagodp)|
 | South Georgia and the South Sandwich Islands (`GS`) | `FKP` | Wikipedia and https://gov.gs | [@danielrentz](https://github.com/danielrentz), [@thiagodp](https://github.com/thiagodp)|
 | Niger (`NE`) | `XOF` | Wikipedia | [@danielrentz](https://github.com/danielrentz), [@thiagodp](https://github.com/thiagodp)|

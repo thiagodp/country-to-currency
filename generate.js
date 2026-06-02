@@ -96,9 +96,9 @@ const inclusionsOrFixes = [
     country: 'Uruguay', details: 'Wikipedia',
     thanks: [ 'marneborn', 'thiagodp' ]
   },
-  // Netherlands Antilles (AN) uses Netherlands Antillean Guilder (ANG), according to ISO 4217. Thanks @jayPare
-  { countryCode: 'AN', currencyCode: 'ANG',
-    country: 'Netherlands Antilles', details: 'ISO 4217',
+  // Netherlands Antilles (AN) was dissolved in 2010; its successor territories (Curaçao and Sint Maarten) adopted the Caribbean Guilder (XCG), which replaced the now-retired Netherlands Antillean Guilder (ANG) on 2025-07-01. Thanks @jayPare
+  { countryCode: 'AN', currencyCode: 'XCG',
+    country: 'Netherlands Antilles', details: 'XCG replaced ANG on 2025-07-01 ([Wikipedia](https://en.wikipedia.org/wiki/Caribbean_guilder))',
     thanks: [ 'jayPare', 'thiagodp' ]
   },
   // El Salvador (SV) changed from 'SVC' to 'USD' since 2001, according to Wikipedia. Thanks @chaitanya-d

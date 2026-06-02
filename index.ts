@@ -7,7 +7,7 @@ const countryToCurrency = {
   AI: 'XCD',
   AL: 'ALL',
   AM: 'AMD',
-  AN: 'ANG',
+  AN: 'XCG',
   AO: 'AOA',
   AQ: 'USD',
   AR: 'ARS',
