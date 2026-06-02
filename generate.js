@@ -1,24 +1,28 @@
 // import countries from 'country-list/data.json';
-import currencies from 'currency-codes/data.js';
+import { currencies as listCurrencies } from 'fresh-currency-codes';
 import { readFileSync, writeFileSync } from 'node:fs';
 
 // Read countries from the JSON file
 const countries = JSON.parse( readFileSync( './node_modules/country-list/data.json' ).toString() );
+
+const currencies = listCurrencies( { includeDeprecated: false } );
 
 
 const result = {};
 let count = 0;
 let notFound = [];
 for ( const country of countries ) {
-  for ( const currency of currencies ) {
-    const countryName = country.name.split( ',' )[ 0 ];
-    if ( currency.countries.join( ',' ).indexOf( countryName ) >= 0 ) {
-      result[ country.code ] = currency.code;
-      ++count;
-      break;
-    }
-  }
-  if ( ! result[ country.code ] ) {
+  const countryName = country.name.split( ',' )[ 0 ].toLowerCase();
+  // ISO country names lead with the country itself, so a prefix match reconciles
+  // country-list's short names with the "(the)"-suffixed ISO names — and won't
+  // match a short name buried inside a longer one (e.g. "mali" within "somalia").
+  const match = currencies.find( currency =>
+    currency.countries.some( name => name.toLowerCase().startsWith( countryName ) )
+  );
+  if ( match ) {
+    result[ country.code ] = match.code;
+    ++count;
+  } else {
     notFound.push( country );
   }
 }

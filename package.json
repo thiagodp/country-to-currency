@@ -31,7 +31,7 @@
   ],
   "devDependencies": {
     "country-list": "=2.3.0",
-    "currency-codes": "latest",
+    "fresh-currency-codes": "^1.1.0",
     "microbundle": "^0.15.1"
   },
   "files": [
