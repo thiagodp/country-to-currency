@@ -1,5 +1,6 @@
 {
   "name": "example-nodejs-pkg",
+  "type": "module",
   "scripts": {
     "start": "node example.js"
   },
