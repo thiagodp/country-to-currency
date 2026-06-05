@@ -1,6 +1,6 @@
 {
   "name": "country-to-currency",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "Map country codes (ISO 3166-1 alpha-2) to their default currency codes (ISO 4217)",
   "license": "MIT",
   "repository": {
@@ -29,7 +29,6 @@
     "node",
     "deno"
   ],
-
   "type": "module",
   "source": "./index.ts",
   "types": "./index.d.ts",
@@ -41,7 +40,6 @@
     "index.js",
     "index.d.ts"
   ],
-
   "scripts": {
     "test": "echo \"No tests\"",
     "gen": "node generate.js",
@@ -50,7 +48,6 @@
     "preversion": "pnpm run all",
     "postversion": "echo \"Don't forget to push the tags and publish the version.\""
   },
-
   "devDependencies": {
     "country-list": "^2.4.1",
     "fast-xml-parser": "^5.8.0",
