@@ -13,17 +13,17 @@ function replaceStrangeApostrophe( text ) {
   return text.replace( '’', "'" );
 }
 
-function removeCommaAndParenthesisAndBrackets( text ) {
-  return text.replaceAll( /[,\(\)\[\]]/g, '' );
+function removeUnwantedChars( text ) {
+  return text.replaceAll( /[,\(\)\[\]\*]/g, '' ); // ,[]()*
 }
 
-function removeThe( text ) {
-  return text.replaceAll( /(THE | THE | THE)/g, ' ' ).trim();
+function removeWords( text ) {
+  return text.replaceAll( /(THE | THE | THE| KINGDOM OF)/g, ' ' ).trim(); // "THE ", " THE ", " THE", " KINGDOM OF"
 }
 
 function fixCountryName( name = '' ) {
-  return removeThe(
-    removeCommaAndParenthesisAndBrackets(
+  return removeWords(
+    removeUnwantedChars(
       replaceStrangeApostrophe(
         removeAccentuation( name.toUpperCase() )
       )
@@ -60,7 +60,6 @@ try {
 }
 
 const countryNameToCurrencyCodeMap = {};
-// const countryNameToCodeMap = new Map();
 for ( const entry of jsContent.ISO_4217.CcyTbl.CcyNtry ) {
     const currencyCode = entry.Ccy;
     const countryName = fixCountryName( entry.CtryNm );
@@ -68,9 +67,11 @@ for ( const entry of jsContent.ISO_4217.CcyTbl.CcyNtry ) {
     if ( countryNameToCurrencyCodeMap[ countryName ] ) {
       continue;
     }
-    // countryNameToCodeMap.set( country, code );
     countryNameToCurrencyCodeMap[ countryName ] = currencyCode;
 }
+
+// Write a file to visualize the data
+// writeFileSync( 'data.json', JSON.stringify( countryNameToCurrencyCodeMap ) );
 
 // ----------------------------------------------------------------------------
 // Get countries from JSON (local package)

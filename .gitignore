@@ -11,3 +11,4 @@ test
 deno.lock
 *.xml
 data.js
+data.json
