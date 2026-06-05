@@ -29,35 +29,32 @@
     "node",
     "deno"
   ],
-  "devDependencies": {
-    "country-list": "^2.3.0",
-    "fast-xml-parser": "^5.8.0",
-    "microbundle": "^0.15.1"
+
+  "type": "module",
+  "source": "./index.ts",
+  "types": "./index.d.ts",
+  "exports": {
+    "module": "./index.js",
+    "types": "./index.d.ts"
   },
   "files": [
-    "index.*"
+    "index.js",
+    "index.d.ts"
   ],
-  "type": "module",
-  "source": "index.ts",
-  "types": "index.d.ts",
-  "main": "index.cjs",
-  "exports": {
-    ".": {
-      "import": "./index.esm.js",
-      "require": "./index.cjs",
-      "default": "./index.js"
-    }
-  },
-  "module": "index.esm.js",
-  "unpkg": "index.umd.js",
-  "browser": "index.umd.js",
-  "umd:main": "index.umd.js",
+
   "scripts": {
     "test": "echo \"No tests\"",
     "gen": "node generate.js",
-    "build": "microbundle --no-sourcemap",
+    "build": "tsdown",
     "all": "pnpm run gen && pnpm run build",
     "preversion": "pnpm run all",
     "postversion": "echo \"Don't forget to push the tags and publish the version.\""
+  },
+
+  "devDependencies": {
+    "country-list": "^2.4.1",
+    "fast-xml-parser": "^5.8.0",
+    "tsdown": "^0.22.2",
+    "typescript": "^6.0.3"
   }
 }

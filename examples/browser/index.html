@@ -7,8 +7,8 @@
 </head>
 <body>
     <output id="out" ></output>
-    <script src="../../index.umd.js" ></script>
-    <script>
+    <script type="module" >
+        import countryToCurrency from "https://unpkg.com/country-to-currency";
         out.innerText = countryToCurrency[ 'US' ];
     </script>
 </body>

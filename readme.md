@@ -6,7 +6,7 @@
 
 > Maps country codes ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements)) to their default currency codes ([ISO 4217](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)).
 
-⚡ Just 2.3 KB (uncompressed), no external dependencies.
+⚡ Just 3 KB uncompressed (1.2 KB gzipped), no external dependencies.
 
 🎯 Work with browsers, NodeJS, and DenoJS. JavaScript and TypeScript.
 
@@ -16,13 +16,11 @@
 npm i country-to-currency
 ```
 
+> Note: Version 3.x dropped the support to CJS and UMD, in favor of using only EcmaScript Modules (ESM).
 
 ## Usage
 
 This library exports a default object that maps country codes to currency codes.
-
-[Available formats]() include [UMD](https://github.com/umdjs/umd) (therefore [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD) and [CommonJS](http://wiki.commonjs.org/wiki/CommonJS)) and
-[ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
 👉 Examples available in the folder [examples](https://github.com/thiagodp/country-to-currency/tree/master/examples).
 
@@ -38,36 +36,26 @@ Example using TypeScript on NodeJS:
 ```
 
 ### Browser - without installing anything
-
-Global:
-```html
-<script crossorigin src="https://unpkg.com/country-to-currency" ></script>
-<script>
-  console.log( countryToCurrency ); // {AF: "AFN", AX: "EUR", ... }
-  console.log( countryToCurrency[ 'US' ] ); // USD
-  console.log( countryToCurrency[ 'DE' ] ); // EUR
-  console.log( countryToCurrency[ 'BR' ] ); // BRL
-</script>
-```
-
-ESM:
 ```html
 <script type="module" >
-  import countryToCurrency from "https://unpkg.com/country-to-currency/index.esm.js";
+  // import countryToCurrency from "https://unpkg.com/country-to-currency/index.esm.js"; // v2.x
+  import countryToCurrency from "https://unpkg.com/country-to-currency"; // v3.x
   console.log( countryToCurrency[ 'US' ] ); // USD
 </script>
 ```
 
 ### NodeJS
 ```js
-const countryToCurrency = require( 'country-to-currency' ); // v1.x and v2.0.2+
+// const countryToCurrency = require( 'country-to-currency' ); // v1.x and v2.0.2+
+import countryToCurrency from 'country-to-currency'; // v3+
 console.log( countryToCurrency[ 'US' ] ); // USD
 ```
 
 ### Deno
 
 ```js
-import countryToCurrency from "https://unpkg.com/country-to-currency/index.esm.js";
+// import countryToCurrency from "https://unpkg.com/country-to-currency/index.esm.js"; // v2.x
+import countryToCurrency from "https://unpkg.com/country-to-currency"; // v3.x
 console.log( countryToCurrency[ 'US' ] ); // USD
 ```
 

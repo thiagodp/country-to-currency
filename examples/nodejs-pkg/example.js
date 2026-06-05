@@ -1,5 +1,5 @@
 // node example.js
-const countryToCurrency = require( "country-to-currency" );
+import countryToCurrency from "country-to-currency";
 const currency = 'BRL';
 const country = 'BR';
 console.log(countryToCurrency['AD']);
