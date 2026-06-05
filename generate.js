@@ -145,84 +145,11 @@ const inclusionsOrFixes = [
   // Other
   //
 
-  // Turkey uses 'Turkish lira' (TRY), according to Wikipedia.
-  { countryCode: 'TR', currencyCode: 'TRY',
-    country: 'Turkey', details: 'Wikipedia',
-    thanks: [ 'kylem123', 'thiagodp' ]
-  },
-
-  // South Korea (KR) uses currency 'KRW', according to ISO 4217.
-  { countryCode: 'KR', currencyCode: 'KRW',
-    country: 'South Korea', details: 'ISO 4217',
-    thanks: [ 'MunjaeLee', 'thiagodp' ]
-  },
-
-  // Switzerland uses 'CHF', according to Wikipedia.
-  { countryCode: 'CH', currencyCode: 'CHF',
-    country: 'Switzerland', details: 'Wikipedia',
-    thanks: [ 'betabong', 'thiagodp' ]
-  },
-
-  // Chile uses 'Chilean peso' (CLP), and 'CLF' is a non-circulating currency, according to Wikipedia.
-  { countryCode: 'CL', currencyCode: 'CLP',
-    country: 'Chile', details: '`CLF` is a non-circulating currency. Wikipedia',
-    thanks: [ 'thiagodp' ]
-  },
-
-  // Uruguay uses 'UYU', according to Wikipedia.
-  { countryCode: 'UY', currencyCode: 'UYU',
-    country: 'Uruguay', details: 'Wikipedia',
-    thanks: [ 'marneborn', 'thiagodp' ]
-  },
-
-  // Croatia moved from Kuna (HRK) to Euro (EUR) on January 1, 2023, according to Wikipedia and Stripe.
-  { countryCode: 'HR', currencyCode: 'EUR',
-    country: 'Croatia', details: 'Since January 1st, 2023. Wikipedia and Stripe',
-    thanks: [ 'xaphod', 'thiagodp' ]
-  },
-
   // El Salvador (SV) changed from 'SVC' to 'USD' since 2001, according to Wikipedia.
   { countryCode: 'SV', currencyCode: 'USD',
     country: 'El Salvador', details: 'Since 2001. Wikipedia',
     thanks: [ 'chaitanya-d', 'thiagodp' ]
   },
-
-  // Cuba (CU) changed from 'CUC' to 'CUP' since 2021, according to Wikipedia.
-  { countryCode: 'CU', currencyCode: 'CUP',
-    country: 'Cuba', details: 'Wikipedia',
-    thanks: [ 'jasongitmail', 'thiagodp' ]
-  },
-
-  // Hungary (HU) uses Forint (HUF), according to Wikipedia.
-  { countryCode: 'HU', currencyCode: 'HUF',
-    country: 'Hungary', details: 'Wikipedia',
-    thanks: [ 'jasongitmail', 'thiagodp' ] },
-
-  // Samoa (WS) uses Tālā ('WST'), according to Wikipedia.
-  { countryCode: 'WS', currencyCode: 'WST',
-    country: 'Samoa', details: 'Wikipedia',
-    thanks: [ 'jasongitmail', 'thiagodp' ] },
-
-  // Niger (NE) uses West African CFA Franc (XOF), according to Wikipedia.
-  { countryCode: 'NE', currencyCode: 'XOF',
-    country: 'Niger', details: 'Wikipedia',
-    thanks: [ 'danielrentz', 'thiagodp' ] },
-
-  // Republic of the Congo (CG) uses 'Central African CFA Franc' (XAF), according to Wikipedia.
-  { countryCode: 'CG', currencyCode: 'XAF',
-    country: 'Republic of the Congo', details: 'Wikipedia',
-    thanks: [ 'jasongitmail', 'thiagodp' ] },
-
-  // Dominican Republic (DM) uses 'East Caribbean Dollar' (XCD), according to Wikipedia.
-  { countryCode: 'DM', currencyCode: 'XCD',
-    country: 'Dominican Republic', details: 'Wikipedia',
-    thanks: [ 'jasongitmail', 'thiagodp' ] },
-
-  // Sierra Leone (SL) uses the new 'Leone' code SLE since January 1st, 2024 - according to European Union (https://publications.europa.eu/code/en/en-5000700.htm#fn*).
-  { countryCode: 'SL', currencyCode: 'SLE',
-    country: 'Sierra Leone',
-    details: 'Wikipedia and [European Union](https://publications.europa.eu/code/en/en-5000700.htm#fn*)',
-    thanks: [ 'jasongitmail', 'thiagodp' ] },
 
   // Kosovo is using "XK" as a temporary country code (https://geonames.wordpress.com/2010/03/08/xk-country-code-for-kosovo/) and it's using Euro (EUR) (https://en.wikipedia.org/wiki/Kosovo)
   { countryCode: 'XK', currencyCode: 'EUR',
@@ -230,17 +157,95 @@ const inclusionsOrFixes = [
     details: '[Wikipedia](https://en.wikipedia.org/wiki/Kosovo) and [Geo Names](https://geonames.wordpress.com/2010/03/08/xk-country-code-for-kosovo/)',
     thanks: [ 'dukesilverr', 'thiagodp' ] },
 
-  // On 01 January 2026, Bulgaria joined the Eurozone (https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html).
-  { countryCode: 'BG', currencyCode: 'EUR',
-    country: 'Bulgaria',
-    details: '[On 01 January 2026, Bulgaria joined the Eurozone](https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html)',
-    thanks: [ 'joelpickup', 'thiagodp' ] },
-
   // Buthan has two currencies, BTN and INR, but BTN is the official one.
   { countryCode: 'BT', currencyCode: 'BTN',
     country: 'Buthan',
     details: 'According to [Wikipedia](https://en.wikipedia.org/wiki/Bhutan)',
     thanks: [ 'thiagodp' ] },
+
+  //
+  // Not needed anymore
+  //
+
+  // // Turkey uses 'Turkish lira' (TRY), according to Wikipedia.
+  // { countryCode: 'TR', currencyCode: 'TRY',
+  //   country: 'Turkey', details: 'Wikipedia',
+  //   thanks: [ 'kylem123', 'thiagodp' ]
+  // },
+
+  // // South Korea (KR) uses currency 'KRW', according to ISO 4217.
+  // { countryCode: 'KR', currencyCode: 'KRW',
+  //   country: 'South Korea', details: 'ISO 4217',
+  //   thanks: [ 'MunjaeLee', 'thiagodp' ]
+  // },
+
+  // // Switzerland uses 'CHF', according to Wikipedia.
+  // { countryCode: 'CH', currencyCode: 'CHF',
+  //   country: 'Switzerland', details: 'Wikipedia',
+  //   thanks: [ 'betabong', 'thiagodp' ]
+  // },
+
+  // // Chile uses 'Chilean peso' (CLP), and 'CLF' is a non-circulating currency, according to Wikipedia.
+  // { countryCode: 'CL', currencyCode: 'CLP',
+  //   country: 'Chile', details: '`CLF` is a non-circulating currency. Wikipedia',
+  //   thanks: [ 'thiagodp' ]
+  // },
+
+  // // Uruguay uses 'UYU', according to Wikipedia.
+  // { countryCode: 'UY', currencyCode: 'UYU',
+  //   country: 'Uruguay', details: 'Wikipedia',
+  //   thanks: [ 'marneborn', 'thiagodp' ]
+  // },
+
+  // // Niger (NE) uses West African CFA Franc (XOF), according to Wikipedia.
+  // { countryCode: 'NE', currencyCode: 'XOF',
+  //   country: 'Niger', details: 'Wikipedia',
+  //   thanks: [ 'danielrentz', 'thiagodp' ] },
+
+  // // Republic of the Congo (CG) uses 'Central African CFA Franc' (XAF), according to Wikipedia.
+  // { countryCode: 'CG', currencyCode: 'XAF',
+  //   country: 'Republic of the Congo', details: 'Wikipedia',
+  //   thanks: [ 'jasongitmail', 'thiagodp' ] },
+
+  // // Dominican Republic (DM) uses 'East Caribbean Dollar' (XCD), according to Wikipedia.
+  // { countryCode: 'DM', currencyCode: 'XCD',
+  //   country: 'Dominican Republic', details: 'Wikipedia',
+  //   thanks: [ 'jasongitmail', 'thiagodp' ] },
+
+  // // Sierra Leone (SL) uses the new 'Leone' code SLE since January 1st, 2024 - according to European Union (https://publications.europa.eu/code/en/en-5000700.htm#fn*).
+  // { countryCode: 'SL', currencyCode: 'SLE',
+  //   country: 'Sierra Leone',
+  //   details: 'Wikipedia and [European Union](https://publications.europa.eu/code/en/en-5000700.htm#fn*)',
+  //   thanks: [ 'jasongitmail', 'thiagodp' ] },
+
+  // // On 01 January 2026, Bulgaria joined the Eurozone (https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html).
+  // { countryCode: 'BG', currencyCode: 'EUR',
+  //   country: 'Bulgaria',
+  //   details: '[On 01 January 2026, Bulgaria joined the Eurozone](https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html)',
+  //   thanks: [ 'joelpickup', 'thiagodp' ] },
+
+  // // Samoa (WS) uses Tālā ('WST'), according to Wikipedia.
+  // { countryCode: 'WS', currencyCode: 'WST',
+  //   country: 'Samoa', details: 'Wikipedia',
+  //   thanks: [ 'jasongitmail', 'thiagodp' ] },
+
+  // // Hungary (HU) uses Forint (HUF), according to Wikipedia.
+  // { countryCode: 'HU', currencyCode: 'HUF',
+  //   country: 'Hungary', details: 'Wikipedia',
+  //   thanks: [ 'jasongitmail', 'thiagodp' ] },
+
+  // // Cuba (CU) changed from 'CUC' to 'CUP' since 2021, according to Wikipedia.
+  // { countryCode: 'CU', currencyCode: 'CUP',
+  //   country: 'Cuba', details: 'Wikipedia',
+  //   thanks: [ 'jasongitmail', 'thiagodp' ]
+  // },
+
+  // // Croatia moved from Kuna (HRK) to Euro (EUR) on January 1, 2023, according to Wikipedia and Stripe.
+  // { countryCode: 'HR', currencyCode: 'EUR',
+  //   country: 'Croatia', details: 'Since January 1st, 2023. Wikipedia and Stripe',
+  //   thanks: [ 'xaphod', 'thiagodp' ]
+  // },
+
 ];
 
 // [![GitHub profile picture](https://github.com/thiagodp.png?size=24)](https://github.com/thiagodp)

@@ -80,7 +80,7 @@ Do you also need currency symbols? [See how to get them](https://github.com/thia
 - Total countries: `251`
   - Imported: `249`
   - Included: `5`
-  - Fixed: `16`
+  - Fixed: `2`
 - Currencies assumed:
 
 | Country | Currency | Details | Legacy |Thanks to |
@@ -89,22 +89,8 @@ Do you also need currency symbols? [See how to get them](https://github.com/thia
 | Palestine (`PS`) | `ILS` | Google |  | [@thiagodp](https://github.com/thiagodp)|
 | South Georgia and the South Sandwich Islands (`GS`) | `FKP` | Wikipedia and https://gov.gs |  | [@danielrentz](https://github.com/danielrentz), [@thiagodp](https://github.com/thiagodp)|
 | Netherlands Antilles (`AN`) | `ANG` | Legacy support. In 2026 Netherlands Antilles was split into separate countries. | Yes | [@jayPare](https://github.com/jayPare), [@thiagodp](https://github.com/thiagodp)|
-| Turkey (`TR`) | `TRY` | Wikipedia |  | [@kylem123](https://github.com/kylem123), [@thiagodp](https://github.com/thiagodp)|
-| South Korea (`KR`) | `KRW` | ISO 4217 |  | [@MunjaeLee](https://github.com/MunjaeLee), [@thiagodp](https://github.com/thiagodp)|
-| Switzerland (`CH`) | `CHF` | Wikipedia |  | [@betabong](https://github.com/betabong), [@thiagodp](https://github.com/thiagodp)|
-| Chile (`CL`) | `CLP` | `CLF` is a non-circulating currency. Wikipedia |  | [@thiagodp](https://github.com/thiagodp)|
-| Uruguay (`UY`) | `UYU` | Wikipedia |  | [@marneborn](https://github.com/marneborn), [@thiagodp](https://github.com/thiagodp)|
-| Croatia (`HR`) | `EUR` | Since January 1st, 2023. Wikipedia and Stripe |  | [@xaphod](https://github.com/xaphod), [@thiagodp](https://github.com/thiagodp)|
 | El Salvador (`SV`) | `USD` | Since 2001. Wikipedia |  | [@chaitanya-d](https://github.com/chaitanya-d), [@thiagodp](https://github.com/thiagodp)|
-| Cuba (`CU`) | `CUP` | Wikipedia |  | [@jasongitmail](https://github.com/jasongitmail), [@thiagodp](https://github.com/thiagodp)|
-| Hungary (`HU`) | `HUF` | Wikipedia |  | [@jasongitmail](https://github.com/jasongitmail), [@thiagodp](https://github.com/thiagodp)|
-| Samoa (`WS`) | `WST` | Wikipedia |  | [@jasongitmail](https://github.com/jasongitmail), [@thiagodp](https://github.com/thiagodp)|
-| Niger (`NE`) | `XOF` | Wikipedia |  | [@danielrentz](https://github.com/danielrentz), [@thiagodp](https://github.com/thiagodp)|
-| Republic of the Congo (`CG`) | `XAF` | Wikipedia |  | [@jasongitmail](https://github.com/jasongitmail), [@thiagodp](https://github.com/thiagodp)|
-| Dominican Republic (`DM`) | `XCD` | Wikipedia |  | [@jasongitmail](https://github.com/jasongitmail), [@thiagodp](https://github.com/thiagodp)|
-| Sierra Leone (`SL`) | `SLE` | Wikipedia and [European Union](https://publications.europa.eu/code/en/en-5000700.htm#fn*) |  | [@jasongitmail](https://github.com/jasongitmail), [@thiagodp](https://github.com/thiagodp)|
 | Kosovo (`XK`) | `EUR` | [Wikipedia](https://en.wikipedia.org/wiki/Kosovo) and [Geo Names](https://geonames.wordpress.com/2010/03/08/xk-country-code-for-kosovo/) |  | [@dukesilverr](https://github.com/dukesilverr), [@thiagodp](https://github.com/thiagodp)|
-| Bulgaria (`BG`) | `EUR` | [On 01 January 2026, Bulgaria joined the Eurozone](https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html) |  | [@joelpickup](https://github.com/joelpickup), [@thiagodp](https://github.com/thiagodp)|
 | Buthan (`BT`) | `BTN` | According to [Wikipedia](https://en.wikipedia.org/wiki/Bhutan) |  | [@thiagodp](https://github.com/thiagodp)|
 
 ## Contribute
