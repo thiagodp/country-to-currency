@@ -33,6 +33,7 @@
   "source": "./index.ts",
   "types": "./index.d.ts",
   "exports": {
+    "default": "./index.js",
     "module": "./index.js",
     "types": "./index.d.ts"
   },
