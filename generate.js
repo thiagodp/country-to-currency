@@ -1,158 +1,246 @@
-// import countries from 'country-list/data.json';
-import currencies from 'currency-codes/data.js';
 import { readFileSync, writeFileSync } from 'node:fs';
+import { XMLParser } from "fast-xml-parser";
+
+// ----------------------------------------------------------------------------
+// Utilities
+// ----------------------------------------------------------------------------
+
+function removeAccentuation( text ) {
+  return text.normalize('NFD').replace( /[\u0300-\u036f]/g, '' );
+}
+
+function replaceStrangeApostrophe( text ) {
+  return text.replace( '’', "'" );
+}
+
+function removeCommaAndParenthesisAndBrackets( text ) {
+  return text.replaceAll( /[,\(\)\[\]]/g, '' );
+}
+
+function removeThe( text ) {
+  return text.replaceAll( /(THE | THE | THE)/g, ' ' ).trim();
+}
+
+function fixCountryName( name = '' ) {
+  return removeThe(
+    removeCommaAndParenthesisAndBrackets(
+      replaceStrangeApostrophe(
+        removeAccentuation( name.toUpperCase() )
+      )
+    )
+  );
+}
+
+// ----------------------------------------------------------------------------
+// Get currencies from the web (XML fetch + parsing)
+// ----------------------------------------------------------------------------
+
+async function fetchXML( url ) {
+    const response = await fetch( url );
+    if ( ! response.ok ) {
+        throw new Error( `Error fetching the XML file: ${response.status}` );
+    }
+    return await response.text();
+}
+
+async function parseXML( content ) {
+    const parser = new XMLParser();
+    return await parser.parse( content );
+}
+
+const CURRENCY_XML = 'https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml';
+
+let jsContent;
+try {
+    const xmlContent = await fetchXML( CURRENCY_XML );
+    jsContent = await parseXML( xmlContent );
+} catch ( error ) {
+    console.error( `Error processing the XML file: ${error.message}` );
+    process.exit( 1 );
+}
+
+const countryNameToCurrencyCodeMap = {};
+// const countryNameToCodeMap = new Map();
+for ( const entry of jsContent.ISO_4217.CcyTbl.CcyNtry ) {
+    const currencyCode = entry.Ccy;
+    const countryName = fixCountryName( entry.CtryNm );
+    // console.log( `Country ${countryName}`, (( countryName != entry.CtryNm ) ? 'Original: ' + entry.CtryNm : '' ) );
+    if ( countryNameToCurrencyCodeMap[ countryName ] ) {
+      continue;
+    }
+    // countryNameToCodeMap.set( country, code );
+    countryNameToCurrencyCodeMap[ countryName ] = currencyCode;
+}
+
+// ----------------------------------------------------------------------------
+// Get countries from JSON (local package)
+// ----------------------------------------------------------------------------
 
 // Read countries from the JSON file
 const countries = JSON.parse( readFileSync( './node_modules/country-list/data.json' ).toString() );
 
+// ----------------------------------------------------------------------------
+// Create country code to currency map
+// ----------------------------------------------------------------------------
 
 const result = {};
 let count = 0;
-let notFound = [];
-for ( const country of countries ) {
-  for ( const currency of currencies ) {
-    const countryName = country.name.split( ',' )[ 0 ];
-    if ( currency.countries.join( ',' ).indexOf( countryName ) >= 0 ) {
-      result[ country.code ] = currency.code;
-      ++count;
-      break;
-    }
+
+for ( const country of countries ) { // eg: [ { "code": "AD", "name": "Andorra" }, ...]
+
+  const countryName = fixCountryName( country.name );
+  // console.log( `Trying ${countryName}` );
+
+  let currencyCode = countryNameToCurrencyCodeMap[ countryName ]; // Currency code
+
+  if ( ! currencyCode ) {
+    console.log( `Note: Code not detected for the country ${countryName}. Maybe it has no currency code (eg, Antarctiva, Palestine).` );
+    continue;
   }
-  if ( ! result[ country.code ] ) {
-    notFound.push( country );
-  }
+
+  result[ country.code ] = currencyCode;
+  ++count;
 }
 
-if ( notFound.length > 0 ) {
-
-  const allNotFound = [ ... notFound ];
-  for ( const currency of currencies ) {
-    for ( const currencyCountry of currency.countries ) {
-
-      const currencyCountryName = currencyCountry
-        .replace( /(\([A-z ]+\)| ?\[|\])/g, '' )
-        .replace( /’/, "'" )
-        .trim()
-        .toLowerCase();
-
-      for ( const countryNotFound of allNotFound ) {
-
-        const nameNotFound = countryNotFound.name.replace( /(\(|\))/g, '' )
-          .trim()
-          .toLowerCase();
-
-        if ( nameNotFound.indexOf( currencyCountryName ) >= 0 ) {
-          notFound = notFound.filter( f => f.code != countryNotFound.code );
-          result[ countryNotFound.code ] = currency.code;
-          ++count;
-        }
-
-      }
-    }
-  }
-}
-
-//
+// ----------------------------------------------------------------------------
 // Inclusions or Fixes
-//
+// ----------------------------------------------------------------------------
 
 const inclusionsOrFixes = [
+
+  //
+  // Countries with no official currency
+  //
+
   // Antarctica has no official currency, so we will assume USD.
   { countryCode: 'AQ', currencyCode: 'USD',
     country: 'Antarctica', details: 'Antarctica has no official currency',
     thanks: [ 'thiagodp' ]
   },
+
   // Palestine uses the currency 'New Israeli Sheqel' (ILS), according to Google.
   { countryCode: 'PS', currencyCode: 'ILS',
     country: 'Palestine', details: 'Google',
     thanks: [ 'thiagodp' ]
   },
-  // Turkey uses 'Turkish lira' (TRY), according to Wikipedia. Thanks @kylem123
-  { countryCode: 'TR', currencyCode: 'TRY',
-    country: 'Turkey', details: 'Wikipedia',
-    thanks: [ 'kylem123', 'thiagodp' ]
-  },
-  // South Korea (KR) uses currency 'KRW', according to ISO 4217. Thanks @MunjaeLee
-  { countryCode: 'KR', currencyCode: 'KRW',
-    country: 'South Korea', details: 'ISO 4217',
-    thanks: [ 'MunjaeLee', 'thiagodp' ]
-  },
-  // Switzerland uses 'CHF', according to Wikipedia. Thanks @betabong
-  { countryCode: 'CH', currencyCode: 'CHF',
-    country: 'Switzerland', details: 'Wikipedia',
-    thanks: [ 'betabong', 'thiagodp' ]
-  },
-  // Chile uses 'Chilean peso' (CLP), and 'CLF' is a non-circulating currency, according to Wikipedia.
-  { countryCode: 'CL', currencyCode: 'CLP',
-    country: 'Chile', details: '`CLF` is a non-circulating currency. Wikipedia',
-    thanks: [ 'thiagodp' ]
-  },
-  // Uruguay uses 'UYU', according to Wikipedia. Thanks @marneborn
-  { countryCode: 'UY', currencyCode: 'UYU',
-    country: 'Uruguay', details: 'Wikipedia',
-    thanks: [ 'marneborn', 'thiagodp' ]
-  },
-  // Croatia moved from Kuna (HRK) to Euro (EUR) on January 1, 2023, according to Wikipedia and Stripe. Thanks @xaphod
-  { countryCode: 'HR', currencyCode: 'EUR',
-    country: 'Croatia', details: 'Since January 1st, 2023. Wikipedia and Stripe',
-    thanks: [ 'xaphod', 'thiagodp' ]
-  },
-  // Netherlands Antilles (AN) uses Netherlands Antillean Guilder (ANG), according to ISO 4217. Thanks @jayPare
-  { countryCode: 'AN', currencyCode: 'ANG',
-    country: 'Netherlands Antilles', details: 'ISO 4217',
-    thanks: [ 'jayPare', 'thiagodp' ]
-  },
-  // El Salvador (SV) changed from 'SVC' to 'USD' since 2001, according to Wikipedia. Thanks @chaitanya-d
-  { countryCode: 'SV', currencyCode: 'USD',
-    country: 'El Salvador', details: 'Since 2001. Wikipedia',
-    thanks: [ 'chaitanya-d', 'thiagodp' ]
-  },
-  // South Georgia and the South Sandwich Islands ('GS') uses the currency 'Falkland Islands Pound' (FKP), according to Wikipedia and https://gov.gs. Thanks @danielrentz
+
+  // South Georgia and the South Sandwich Islands ('GS') uses the currency 'Falkland Islands Pound' (FKP), according to Wikipedia and https://gov.gs.
   { countryCode: 'GS', currencyCode: 'FKP',
     country: 'South Georgia and the South Sandwich Islands',
     details: 'Wikipedia and https://gov.gs',
     thanks: [ 'danielrentz', 'thiagodp' ]
   },
-  // Cuba (CU) changed from 'CUC' to 'CUP' since 2021, according to Wikipedia. Thanks @jasongitmail
+
+  //
+  // Legacy support (inclusion)
+  //
+
+  // Netherlands Antilles (AN) uses Netherlands Antillean Guilder (ANG), according to ISO 4217.
+  { countryCode: 'AN', currencyCode: 'ANG',
+    country: 'Netherlands Antilles', details: 'Legacy support. In 2026 Netherlands Antilles was split into separate countries.', legacy: true,
+    thanks: [ 'jayPare', 'thiagodp' ]
+  },
+
+  //
+  // Other
+  //
+
+  // Turkey uses 'Turkish lira' (TRY), according to Wikipedia.
+  { countryCode: 'TR', currencyCode: 'TRY',
+    country: 'Turkey', details: 'Wikipedia',
+    thanks: [ 'kylem123', 'thiagodp' ]
+  },
+
+  // South Korea (KR) uses currency 'KRW', according to ISO 4217.
+  { countryCode: 'KR', currencyCode: 'KRW',
+    country: 'South Korea', details: 'ISO 4217',
+    thanks: [ 'MunjaeLee', 'thiagodp' ]
+  },
+
+  // Switzerland uses 'CHF', according to Wikipedia.
+  { countryCode: 'CH', currencyCode: 'CHF',
+    country: 'Switzerland', details: 'Wikipedia',
+    thanks: [ 'betabong', 'thiagodp' ]
+  },
+
+  // Chile uses 'Chilean peso' (CLP), and 'CLF' is a non-circulating currency, according to Wikipedia.
+  { countryCode: 'CL', currencyCode: 'CLP',
+    country: 'Chile', details: '`CLF` is a non-circulating currency. Wikipedia',
+    thanks: [ 'thiagodp' ]
+  },
+
+  // Uruguay uses 'UYU', according to Wikipedia.
+  { countryCode: 'UY', currencyCode: 'UYU',
+    country: 'Uruguay', details: 'Wikipedia',
+    thanks: [ 'marneborn', 'thiagodp' ]
+  },
+
+  // Croatia moved from Kuna (HRK) to Euro (EUR) on January 1, 2023, according to Wikipedia and Stripe.
+  { countryCode: 'HR', currencyCode: 'EUR',
+    country: 'Croatia', details: 'Since January 1st, 2023. Wikipedia and Stripe',
+    thanks: [ 'xaphod', 'thiagodp' ]
+  },
+
+  // El Salvador (SV) changed from 'SVC' to 'USD' since 2001, according to Wikipedia.
+  { countryCode: 'SV', currencyCode: 'USD',
+    country: 'El Salvador', details: 'Since 2001. Wikipedia',
+    thanks: [ 'chaitanya-d', 'thiagodp' ]
+  },
+
+  // Cuba (CU) changed from 'CUC' to 'CUP' since 2021, according to Wikipedia.
   { countryCode: 'CU', currencyCode: 'CUP',
     country: 'Cuba', details: 'Wikipedia',
     thanks: [ 'jasongitmail', 'thiagodp' ]
   },
-  // Hungary (HU) uses Forint (HUF), according to Wikipedia. Thanks @jasongitmail
+
+  // Hungary (HU) uses Forint (HUF), according to Wikipedia.
   { countryCode: 'HU', currencyCode: 'HUF',
     country: 'Hungary', details: 'Wikipedia',
     thanks: [ 'jasongitmail', 'thiagodp' ] },
-  // Samoa (WS) uses Tālā ('WST'), according to Wikipedia. Thanks @jasongitmail
+
+  // Samoa (WS) uses Tālā ('WST'), according to Wikipedia.
   { countryCode: 'WS', currencyCode: 'WST',
     country: 'Samoa', details: 'Wikipedia',
     thanks: [ 'jasongitmail', 'thiagodp' ] },
-  // Niger (NE) uses West African CFA Franc (XOF), according to Wikipedia. Thanks @danielrentz
+
+  // Niger (NE) uses West African CFA Franc (XOF), according to Wikipedia.
   { countryCode: 'NE', currencyCode: 'XOF',
     country: 'Niger', details: 'Wikipedia',
     thanks: [ 'danielrentz', 'thiagodp' ] },
-  // Republic of the Congo (CG) uses 'Central African CFA Franc' (XAF), according to Wikipedia. Thanks @jasongitmail
+
+  // Republic of the Congo (CG) uses 'Central African CFA Franc' (XAF), according to Wikipedia.
   { countryCode: 'CG', currencyCode: 'XAF',
     country: 'Republic of the Congo', details: 'Wikipedia',
     thanks: [ 'jasongitmail', 'thiagodp' ] },
-  // Dominican Republic (DM) uses 'East Caribbean Dollar' (XCD), according to Wikipedia. Thanks @jasongitmail
+
+  // Dominican Republic (DM) uses 'East Caribbean Dollar' (XCD), according to Wikipedia.
   { countryCode: 'DM', currencyCode: 'XCD',
     country: 'Dominican Republic', details: 'Wikipedia',
     thanks: [ 'jasongitmail', 'thiagodp' ] },
-  // Sierra Leone (SL) uses the new 'Leone' code SLE since January 1st, 2024 - according to European Union (https://publications.europa.eu/code/en/en-5000700.htm#fn*). Thanks @jasongitmail
+
+  // Sierra Leone (SL) uses the new 'Leone' code SLE since January 1st, 2024 - according to European Union (https://publications.europa.eu/code/en/en-5000700.htm#fn*).
   { countryCode: 'SL', currencyCode: 'SLE',
     country: 'Sierra Leone',
     details: 'Wikipedia and [European Union](https://publications.europa.eu/code/en/en-5000700.htm#fn*)',
     thanks: [ 'jasongitmail', 'thiagodp' ] },
+
   // Kosovo is using "XK" as a temporary country code (https://geonames.wordpress.com/2010/03/08/xk-country-code-for-kosovo/) and it's using Euro (EUR) (https://en.wikipedia.org/wiki/Kosovo)
   { countryCode: 'XK', currencyCode: 'EUR',
     country: 'Kosovo',
     details: '[Wikipedia](https://en.wikipedia.org/wiki/Kosovo) and [Geo Names](https://geonames.wordpress.com/2010/03/08/xk-country-code-for-kosovo/)',
     thanks: [ 'dukesilverr', 'thiagodp' ] },
-    // On 01 January 2026, Bulgaria joined the Eurozone (https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html). Thanks
+
+  // On 01 January 2026, Bulgaria joined the Eurozone (https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html).
   { countryCode: 'BG', currencyCode: 'EUR',
     country: 'Bulgaria',
     details: '[On 01 January 2026, Bulgaria joined the Eurozone](https://www.ecb.europa.eu/euro/changeover/bulgaria/html/index.en.html)',
     thanks: [ 'joelpickup', 'thiagodp' ] },
+
+  // Buthan has two currencies, BTN and INR, but BTN is the official one.
+  { countryCode: 'BT', currencyCode: 'BTN',
+    country: 'Buthan',
+    details: 'According to [Wikipedia](https://en.wikipedia.org/wiki/Bhutan)',
+    thanks: [ 'thiagodp' ] },
 ];
 
 // [![GitHub profile picture](https://github.com/thiagodp.png?size=24)](https://github.com/thiagodp)
@@ -172,6 +260,7 @@ for ( const item of inclusionsOrFixes ) {
     '| ' + item.country + ' (`' + item.countryCode + '`) ' +
     '| `' + item.currencyCode + '` ' +
     '| ' + item.details + ' ' +
+    '| ' + ( item.legacy ? 'Yes' : '' ) + ' ' +
     '| ' + item.thanks.map( authorToUrl ).join( ', ' ) +
     '|' );
 }
@@ -212,10 +301,10 @@ writeFileSync( 'index.ts', content );
 //
 
 const importedCountriesCount = countries.length;
-const includedCountriesCount = inclusions - notFound.length;
-const fixedCountriesCount = inclusionsOrFixes.length - inclusions + notFound.length;
+const includedCountriesCount = inclusions;
+const fixedCountriesCount = inclusionsOrFixes.length - inclusions;
 
-console.log( 'index.ts generated sucessfully.\n' );
+console.log( '\nindex.ts generated sucessfully.\n' );
 console.log( countryCount, 'countries total:' );
 console.log( '\t', importedCountriesCount, '\timported');
 console.log( '\t', includedCountriesCount, '\tincluded' );
@@ -246,8 +335,8 @@ const notes = [
   '  - Fixed: `' + fixedCountriesCount + '`',
   '- Currencies assumed:',
   '',
-  '| Country | Currency | Details | Thanks to |',
-  '|---------|----------|---------|-----------|',
+  '| Country | Currency | Details | Legacy |Thanks to |',
+  '|---------|----------|---------|--------|----------|',
 ].concat( authoredNotes );
 
 const newLines = lines.slice( 0, notesIndex + 1 ).concat( notes, lines.slice( contributeIndex - 1 ) );

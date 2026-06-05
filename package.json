@@ -30,8 +30,8 @@
     "deno"
   ],
   "devDependencies": {
-    "country-list": "=2.3.0",
-    "currency-codes": "latest",
+    "country-list": "^2.3.0",
+    "fast-xml-parser": "^5.8.0",
     "microbundle": "^0.15.1"
   },
   "files": [

@@ -9,3 +9,5 @@ index.d.ts
 readme-2.md
 test
 deno.lock
+*.xml
+data.js
