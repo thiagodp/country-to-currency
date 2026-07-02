@@ -16,7 +16,7 @@
 npm i country-to-currency
 ```
 
-> Note: Version 3.x dropped the support to CJS and UMD, in favor of using only EcmaScript Modules (ESM).
+> Note: Version 3.x dropped the support to Universal Module Definition (UMD), in favor of the (modern) EcmaScript Modules (ESM).
 
 ## Usage
 
@@ -32,7 +32,7 @@ From version `1.1.0` on, there are two union types available (TypeScript 3.4+ on
 
 Example using TypeScript on NodeJS:
 ```typescript
-  import countryToCurrency, { Currencies, Countries } from "country-to-currency";
+import countryToCurrency, { Currencies, Countries } from "country-to-currency";
 ```
 
 ### Browser - without installing anything
@@ -45,9 +45,19 @@ Example using TypeScript on NodeJS:
 ```
 
 ### NodeJS
+
+Example with ESM:
+
+```js
+import countryToCurrency from 'country-to-currency';
+console.log( countryToCurrency[ 'US' ] ); // USD
+```
+
+Example with CJS (require);
+
 ```js
 // const countryToCurrency = require( 'country-to-currency' ); // v1.x and v2.0.2+
-import countryToCurrency from 'country-to-currency'; // v3+
+const { default: countryToCurrency } = require( 'country-to-currency' ); // v3+
 console.log( countryToCurrency[ 'US' ] ); // USD
 ```
 

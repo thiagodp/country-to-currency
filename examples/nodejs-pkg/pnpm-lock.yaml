@@ -10,13 +10,13 @@ importers:
     dependencies:
       country-to-currency:
         specifier: latest
-        version: 2.0.2
+        version: 3.0.1
 
 packages:
 
-  country-to-currency@2.0.2:
-    resolution: {integrity: sha512-vM4pJUmhw1EEvfqx12ZpbXqCAHMPp/P6dxtz+V0mT5NKiJaC73cbKk7OPxpGZhno+CthOkIyl+a4VAlToFvX7Q==}
+  country-to-currency@3.0.1:
+    resolution: {integrity: sha512-FAo2ga8296d0Ra6vj9TB4Kax36AmqrGEc0aoLflCx5ijMtifNwA8lCqQsFfTLP2lRVKHWh/DedSpqI6v9VHyjw==}
 
 snapshots:
 
-  country-to-currency@2.0.2: {}
+  country-to-currency@3.0.1: {}
