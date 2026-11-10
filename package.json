@@ -51,8 +51,8 @@
   },
   "devDependencies": {
     "country-list": "^2.4.1",
-    "fast-xml-parser": "^5.8.0",
-    "tsdown": "^0.22.2",
+    "fast-xml-parser": "^5.12.0",
+    "tsdown": "^0.22.14",
     "typescript": "^6.0.3"
   }
 }
