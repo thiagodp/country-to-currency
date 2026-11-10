@@ -33,9 +33,9 @@
   "source": "./index.ts",
   "types": "./index.d.ts",
   "exports": {
-    "default": "./index.js",
+    "types": "./index.d.ts",
     "module": "./index.js",
-    "types": "./index.d.ts"
+    "default": "./index.js"
   },
   "files": [
     "index.js",
